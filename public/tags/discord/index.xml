@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Discord on Tomatos&#39;s Cat</title>
+        <link>http://localhost:1313/tags/discord/</link>
+        <description>Recent content in Discord on Tomatos&#39;s Cat</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <lastBuildDate>Mon, 14 Oct 2024 18:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/discord/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>什麼是Discord?</title>
+        <link>http://localhost:1313/p/intro-discord/</link>
+        <pubDate>Mon, 14 Oct 2024 18:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/intro-discord/</guid>
+        <description>&lt;img src="http://localhost:1313/Discord-Symbol.webp" alt="Featured image of post 什麼是Discord?" /&gt;&lt;p&gt;下午終於開始上課了，老師要大家安裝一個平台叫做 &amp;ldquo;Discord&amp;rdquo; , 大家之後就可以在上面討論課程。&lt;/p&gt;
+&lt;p&gt;Discord其實是一個即時訊息和語音通話平台，&lt;/p&gt;
+&lt;p&gt;最初是為遊戲玩家設計的，但現在已經擴展到許多不同的社群和團體使用。&lt;/p&gt;
+&lt;p&gt;它可以讓用戶創建伺服器（Server），並在這些伺服器內進行語音、文字聊天、文件共享等。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;discord的功能&#34;&gt;Discord的功能：
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;語音和視訊通話&lt;/strong&gt;：可進行一對一或群組語音通話、視訊通話。&lt;br&gt;
+&lt;strong&gt;文字聊天&lt;/strong&gt;：可以在不同的頻道中發送訊息、圖片、影片、表情符號等。&lt;br&gt;
+&lt;strong&gt;伺服器管理&lt;/strong&gt;：用戶可以創建、管理伺服器，設置不同的頻道和權限。&lt;br&gt;
+&lt;strong&gt;機器人和擴展&lt;/strong&gt;：可以使用機器人來自動執行某些任務，比如音樂播放、管理伺服器等。&lt;br&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;discord-vs-line&#34;&gt;Discord v.s. LINE：
+&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: right&#34;&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Discord&lt;/strong&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;LINE&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;&lt;strong&gt;用途&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;適合社群與團隊合作&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;日常通信，特別是家人、朋友間的聊天&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;&lt;strong&gt;溝通方式&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;支援伺服器、頻道、語音、直播&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;一對一、群組聊天、語音和視訊通話&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;&lt;strong&gt;功能&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;社群管理、機器人、直播等進階功能&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;文字訊息、語音通話、LINE Pay、貼圖&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;&lt;strong&gt;目標使用者&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;遊戲玩家、社群、團隊合作&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;家庭、朋友、同事&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;&lt;strong&gt;平台支持&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Windows、Mac、iOS、Android&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Windows、Mac、iOS、Android&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;&lt;strong&gt;免費與付費&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;基本免費，付費版提供更多功能&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;基本免費，部分付費功能（貼圖、LINE Pay）&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;總的來說呢，Discord 是一個非常適合各種社群活動、團隊合作或娛樂交流的平台。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Discord 安裝    &lt;a class=&#34;link&#34; href=&#34;https://discord.com/download&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://discord.com/download&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

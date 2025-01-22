@@ -3,11 +3,11 @@ title: 轉職日記-Day1
 description: 
 slug: hello-world
 date: 2024-10-14 18:00:00+0000
-image: cover.jpg
+image: day1_認識新同學和環境安裝.png
 categories:
-    - Example Category
+    - 日記
 tags:
-    - Example Tag
+    - 轉職
 weight: 1       # You can add weight to some posts to override the default sorting (date descending)
 ---
 

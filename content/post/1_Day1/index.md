@@ -10,7 +10,7 @@ categories:
     - 全端工程師
 tags:
     - 轉職
-weight: 1
+weight: 
      # You can add weight to some posts to override the default sorting (date descending)
 ---
 

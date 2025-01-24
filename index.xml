@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Tomatos&#39;s Cat</title>
-        <link>http://localhost:1313/</link>
+        <link>https://michellellehcim.github.io/</link>
         <description>Recent content on Tomatos&#39;s Cat</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
-        <lastBuildDate>Tue, 15 Oct 2024 18:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 15 Oct 2024 18:00:00 +0000</lastBuildDate><atom:link href="https://michellellehcim.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>第一篇</title>
-        <link>http://localhost:1313/p/hello-world/</link>
+        <link>https://michellellehcim.github.io/p/hello-world/</link>
         <pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/hello-world/</guid>
-        <description>&lt;img src="http://localhost:1313/p/hello-world/cover.jpg" alt="Featured image of post 第一篇" /&gt;&lt;p&gt;Welcome to Hugo theme Stack. This is your first post. Edit or delete it, then start writing!&lt;/p&gt;
+        <guid>https://michellellehcim.github.io/p/hello-world/</guid>
+        <description>&lt;img src="https://michellellehcim.github.io/p/hello-world/cover.jpg" alt="Featured image of post 第一篇" /&gt;&lt;p&gt;Welcome to Hugo theme Stack. This is your first post. Edit or delete it, then start writing!&lt;/p&gt;
 &lt;p&gt;For more information about this theme, check the documentation: &lt;a class=&#34;link&#34; href=&#34;https://stack.jimmycai.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://stack.jimmycai.com/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Want a site like this? Check out &lt;a class=&#34;link&#34; href=&#34;https://github.com/CaiJimmy/hugo-theme-stack-starter&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -25,12 +25,180 @@
 </description>
         </item>
         <item>
-        <title>工程師為什麼愛用HackMD?</title>
-        <link>http://localhost:1313/p/intro-hackmd/</link>
+        <title>基礎Markdown語法</title>
+        <link>https://michellellehcim.github.io/p/intro-markdown-basic/</link>
         <pubDate>Tue, 15 Oct 2024 18:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/intro-hackmd/</guid>
-        <description>&lt;img src="http://localhost:1313/p/intro-hackmd/hackMD.jpg" alt="Featured image of post 工程師為什麼愛用HackMD?" /&gt;&lt;p&gt;如果你也正在轉職，非常推薦你也學會用HackMD編輯器!~&lt;/p&gt;
+        <guid>https://michellellehcim.github.io/p/intro-markdown-basic/</guid>
+        <description>&lt;img src="https://michellellehcim.github.io/p/intro-markdown-basic/markdown%E8%AA%9E%E6%B3%95_%E5%85%A5%E9%96%80%E7%AF%87.png" alt="Featured image of post 基礎Markdown語法" /&gt;&lt;blockquote&gt;
+&lt;p&gt;先到HackMD  &lt;a class=&#34;link&#34; href=&#34;https://hackmd.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://hackmd.io/&lt;/a&gt;  註冊一個帳號, 登入後左上角直接點選 &lt;code&gt;+ Create note&lt;/code&gt; 就可以開始寫筆記了 ~&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;以下是我整理的常用MD語法:&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;1-標題-heading--使用--符號來表示標題層級&#34;&gt;1. 標題 (Heading) : 使用 &lt;code&gt;#&lt;/code&gt; 符號來表示標題層級
+&lt;/h2&gt;&lt;p&gt;# 標題一&lt;/p&gt;
+&lt;p&gt;## 標題二&lt;/p&gt;
+&lt;p&gt;### 標題三&lt;/p&gt;
+&lt;p&gt;#### 標題四&lt;/p&gt;
+&lt;p&gt;##### 標題五&lt;/p&gt;
+&lt;p&gt;###### 標題六&lt;/p&gt;
+&lt;h1 id=&#34;標題一&#34;&gt;標題一
+&lt;/h1&gt;&lt;h2 id=&#34;標題二&#34;&gt;標題二
+&lt;/h2&gt;&lt;h3 id=&#34;標題三&#34;&gt;標題三
+&lt;/h3&gt;&lt;h4 id=&#34;標題四&#34;&gt;標題四
+&lt;/h4&gt;&lt;h5 id=&#34;標題五&#34;&gt;標題五
+&lt;/h5&gt;&lt;h6 id=&#34;標題六&#34;&gt;標題六
+&lt;/h6&gt;&lt;hr&gt;
+&lt;h2 id=&#34;2-粗體字-文字的前後都加上&#34;&gt;2. 粗體字: 文字的前後都加上&lt;code&gt;**&lt;/code&gt;
+&lt;/h2&gt;&lt;p&gt;這是**粗體文字**&lt;/p&gt;
+&lt;p&gt;這是 &lt;strong&gt;粗體文字&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3-斜體字-文字的前後都加上&#34;&gt;3. 斜體字: 文字的前後都加上&lt;code&gt;*&lt;/code&gt;
+&lt;/h2&gt;&lt;p&gt;這是*斜體文字*&lt;/p&gt;
+&lt;p&gt;這是&lt;em&gt;斜體文字&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;4-刪除線-文字的前後都加上&#34;&gt;4. 刪除線: 文字的前後都加上&lt;code&gt;~~&lt;/code&gt;
+&lt;/h2&gt;&lt;p&gt;這是~~刪除線~~&lt;/p&gt;
+&lt;p&gt;這是&lt;del&gt;刪除線&lt;/del&gt;&lt;/p&gt;
+&lt;h2 id=&#34;5-無序清單-項目前面使用---或--或--作為開頭&#34;&gt;5. 無序清單: 項目前面使用 &lt;code&gt;-&lt;/code&gt; 或 &lt;code&gt;+&lt;/code&gt; 或 &lt;code&gt;*&lt;/code&gt; 作為開頭
+&lt;/h2&gt;&lt;p&gt;- 項目 1 &lt;br&gt;
+- 項目 2 &lt;br&gt;
+* 項目 3 &lt;br&gt;
+* 項目 4 &lt;br&gt;
++ 項目 5 &lt;br&gt;
++ 項目 6 &lt;br&gt;&lt;/p&gt;
+&lt;p&gt;會自動縮排 &amp;amp; 分段如下:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;項目 1&lt;/li&gt;
+&lt;li&gt;項目 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;項目 3&lt;/li&gt;
+&lt;li&gt;項目 4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;項目 5&lt;/li&gt;
+&lt;li&gt;項目 6&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;６-有序清單-項目前面直接使用-數字作為開頭&#34;&gt;６. 有序清單: 項目前面直接使用 &lt;code&gt;數字+.&lt;/code&gt;作為開頭
+&lt;/h2&gt;&lt;p&gt;1. 項目 1 &lt;br&gt;
+2. 項目 2&lt;/p&gt;
+&lt;p&gt;會自動縮排如下:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;項目 1 &lt;br&gt;&lt;/li&gt;
+&lt;li&gt;項目 2 &lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;7-超連結-語法文字網址&#34;&gt;7. 超連結: 語法&lt;code&gt;[文字](網址)&lt;/code&gt;
+&lt;/h2&gt;&lt;p&gt;[Google](https://www.google.com)&lt;/p&gt;
+&lt;p&gt;會變成:&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.google.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Google&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;8-圖片-語法-替代文字圖片網址&#34;&gt;8. 圖片: 語法 &lt;code&gt;![替代文字](圖片網址)&lt;/code&gt;
+&lt;/h2&gt;&lt;p&gt;![Markdown Logo](https://markdown-here.com/img/icon256.png)
+&lt;/p&gt;
+&lt;p&gt;會變成:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://markdown-here.com/img/icon256.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Markdown Logo&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;9-分隔線-輸入----或--一定要連續輸入3個或3個以上才有效&#34;&gt;9. 分隔線: 輸入&lt;code&gt;---&lt;/code&gt; 或 &lt;code&gt;***&lt;/code&gt; (一定要連續輸入3個或3個以上才有效)
+&lt;/h2&gt;&lt;p&gt;--- (或 ***)&lt;/p&gt;
+&lt;p&gt;會變成:&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;10-引用-語法--文字&#34;&gt;10. 引用: 語法 &lt;code&gt;&amp;gt; 文字&lt;/code&gt;
+&lt;/h2&gt;&lt;p&gt;&amp;gt; 學程式好好玩&lt;/p&gt;
+&lt;p&gt;會變成:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;學程式好好玩&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;11-程式碼單行-程式碼前後加上--&#34;&gt;11. 程式碼(單行): 程式碼前後加上&lt;code&gt;`&lt;/code&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;(需要注意: &lt;code&gt;`&lt;/code&gt; 是在鍵盤最左上角, 和波浪 &lt;code&gt;~&lt;/code&gt; 是同個鍵)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;`console.log(&amp;lsquo;Hello, world!&amp;rsquo;) `&lt;/p&gt;
+&lt;p&gt;會變成:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;console.log(&#39;Hello, world!&#39;)&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;12-程式碼多行-程式碼前後加上--&#34;&gt;12. 程式碼(多行): 程式碼前後加上&lt;code&gt;```&lt;/code&gt;
+&lt;/h2&gt;&lt;p&gt;可以指定要哪一種程式語言，例如javascript&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;```javascript
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;function sayHello() {
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;    console.log(&amp;#39;Hello, world!&amp;#39;);
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;```&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;會變成:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;sayHello&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Hello, world!&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;13-表格-使用--和---建立表格&#34;&gt;13. 表格: 使用 &lt;code&gt;|&lt;/code&gt; 和 &lt;code&gt;-&lt;/code&gt; 建立表格
+&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;| 標題 1   | 標題 2   |
+|----------|----------|
+| 內容 1   | 內容 2   |
+| 內容 3   | 內容 4   |
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;會變成以下:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;標題 1&lt;/th&gt;
+          &lt;th&gt;標題 2&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;內容 1&lt;/td&gt;
+          &lt;td&gt;內容 2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;內容 3&lt;/td&gt;
+          &lt;td&gt;內容 4&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;14-任務清單-語法-----或-x&#34;&gt;14. 任務清單: 語法 &lt;code&gt;-&lt;/code&gt; , &lt;code&gt;[]&lt;/code&gt; 或 &lt;code&gt;[x]&lt;/code&gt;
+&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;- [x] 已完成項目
+- [ ] 未完成項目
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;會顯示:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 已完成項目&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 未完成項目&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;恭喜你已經學會基礎Markdown語法，是不是很簡單呢~&lt;/strong&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>工程師為什麼愛用HackMD?</title>
+        <link>https://michellellehcim.github.io/p/intro-hackmd/</link>
+        <pubDate>Tue, 15 Oct 2024 18:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/p/intro-hackmd/</guid>
+        <description>&lt;img src="https://michellellehcim.github.io/p/intro-hackmd/hackMD.jpg" alt="Featured image of post 工程師為什麼愛用HackMD?" /&gt;&lt;p&gt;如果你也正在轉職，非常推薦你也學會用HackMD編輯器!~&lt;/p&gt;
 &lt;h2 id=&#34;什麼是hackmd呢&#34;&gt;什麼是HackMD呢?
 &lt;/h2&gt;&lt;p&gt;HackMD 是一款 即時協作的線上 Markdown 編輯器。&lt;/p&gt;
 &lt;p&gt;它讓多人能夠同時在瀏覽器上編輯同一份 Markdown 文件，&lt;/p&gt;
@@ -68,11 +236,11 @@
         </item>
         <item>
         <title>什麼是Discord?</title>
-        <link>http://localhost:1313/p/intro-discord/</link>
+        <link>https://michellellehcim.github.io/p/intro-discord/</link>
         <pubDate>Mon, 14 Oct 2024 18:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/intro-discord/</guid>
-        <description>&lt;img src="http://localhost:1313/p/intro-discord/Discord-Symbol.webp" alt="Featured image of post 什麼是Discord?" /&gt;&lt;p&gt;下午終於開始上課了，老師要大家安裝一個平台叫做 &amp;ldquo;Discord&amp;rdquo; , 大家之後就可以在上面討論課程。&lt;/p&gt;
+        <guid>https://michellellehcim.github.io/p/intro-discord/</guid>
+        <description>&lt;img src="https://michellellehcim.github.io/p/intro-discord/Discord-Symbol.webp" alt="Featured image of post 什麼是Discord?" /&gt;&lt;p&gt;下午終於開始上課了，老師要大家安裝一個平台叫做 &amp;ldquo;Discord&amp;rdquo; , 大家之後就可以在上面討論課程。&lt;/p&gt;
 &lt;p&gt;Discord其實是一個即時訊息和語音通話平台，&lt;/p&gt;
 &lt;p&gt;最初是為遊戲玩家設計的，但現在已經擴展到許多不同的社群和團體使用。&lt;/p&gt;
 &lt;p&gt;它可以讓用戶創建伺服器（Server），並在這些伺服器內進行語音、文字聊天、文件共享等。&lt;/p&gt;
@@ -132,11 +300,11 @@
         </item>
         <item>
         <title>轉職日記-Day1</title>
-        <link>http://localhost:1313/p/day-1/</link>
+        <link>https://michellellehcim.github.io/p/day-1/</link>
         <pubDate>Mon, 14 Oct 2024 18:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/day-1/</guid>
-        <description>&lt;img src="http://localhost:1313/p/day-1/day1_%E8%AA%8D%E8%AD%98%E6%96%B0%E5%90%8C%E5%AD%B8%E5%92%8C%E7%92%B0%E5%A2%83%E5%AE%89%E8%A3%9D.png" alt="Featured image of post 轉職日記-Day1" /&gt;&lt;p&gt;第一天開學的上午，課務組發給每人一張九宮格的遊戲單子，單子上面有各種問題，&lt;/p&gt;
+        <guid>https://michellellehcim.github.io/p/day-1/</guid>
+        <description>&lt;img src="https://michellellehcim.github.io/p/day-1/day1_%E8%AA%8D%E8%AD%98%E6%96%B0%E5%90%8C%E5%AD%B8%E5%92%8C%E7%92%B0%E5%A2%83%E5%AE%89%E8%A3%9D.png" alt="Featured image of post 轉職日記-Day1" /&gt;&lt;p&gt;第一天開學的上午，課務組發給每人一張九宮格的遊戲單子，單子上面有各種問題，&lt;/p&gt;
 &lt;p&gt;例如: 喜歡黑貓還是橘貓? 最喜歡吃什麼? 做過最瘋狂的事情是什麼?&lt;/p&gt;
 &lt;p&gt;大家需要離開座位隨機找不同人問這些問題，最後上台介紹你剛剛問了誰，他的回答又是什麼。&lt;/p&gt;
 &lt;p&gt;除了單子上的問題，大家也趁機透過聊天了解彼此的背景，&lt;/p&gt;
@@ -149,10 +317,10 @@
         </item>
         <item>
         <title>Markdown Syntax Guide</title>
-        <link>http://localhost:1313/p/markdown-syntax-guide/</link>
+        <link>https://michellellehcim.github.io/p/markdown-syntax-guide/</link>
         <pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/markdown-syntax-guide/</guid>
+        <guid>https://michellellehcim.github.io/p/markdown-syntax-guide/</guid>
         <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;
 &lt;h2 id=&#34;headings&#34;&gt;Headings
 &lt;/h2&gt;&lt;p&gt;The following HTML &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;—&lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; elements represent six levels of section headings. &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; is the highest section level while &lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; is the lowest.&lt;/p&gt;
@@ -349,11 +517,11 @@
         </item>
         <item>
         <title>Image gallery</title>
-        <link>http://localhost:1313/p/image-gallery/</link>
+        <link>https://michellellehcim.github.io/p/image-gallery/</link>
         <pubDate>Sat, 26 Aug 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/image-gallery/</guid>
-        <description>&lt;img src="http://localhost:1313/p/image-gallery/2.jpg" alt="Featured image of post Image gallery" /&gt;&lt;p&gt;Hugo theme Stack supports the creation of interactive image galleries using Markdown. It&amp;rsquo;s powered by &lt;a class=&#34;link&#34; href=&#34;https://photoswipe.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <guid>https://michellellehcim.github.io/p/image-gallery/</guid>
+        <description>&lt;img src="https://michellellehcim.github.io/p/image-gallery/2.jpg" alt="Featured image of post Image gallery" /&gt;&lt;p&gt;Hugo theme Stack supports the creation of interactive image galleries using Markdown. It&amp;rsquo;s powered by &lt;a class=&#34;link&#34; href=&#34;https://photoswipe.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;PhotoSwipe&lt;/a&gt; and its syntax was inspired by &lt;a class=&#34;link&#34; href=&#34;https://typlog.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Typlog&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;To use this feature, the image must be in the same directory as the Markdown file, as it uses Hugo&amp;rsquo;s page bundle feature to read the dimensions of the image. &lt;strong&gt;External images are not supported.&lt;/strong&gt;&lt;/p&gt;
@@ -367,10 +535,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;result&#34;&gt;Result
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/image-gallery/1.jpg&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://michellellehcim.github.io/p/image-gallery/1.jpg&#34;
 	width=&#34;2000&#34;
 	height=&#34;1400&#34;
-	srcset=&#34;http://localhost:1313/p/image-gallery/1_hu4574578169203714971.jpg 480w, http://localhost:1313/p/image-gallery/1_hu9042511268598201431.jpg 1024w&#34;
+	srcset=&#34;https://michellellehcim.github.io/p/image-gallery/1_hu4574578169203714971.jpg 480w, https://michellellehcim.github.io/p/image-gallery/1_hu9042511268598201431.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Image 1&#34;
@@ -380,10 +548,10 @@
 		data-flex-grow=&#34;142&#34;
 		data-flex-basis=&#34;342px&#34;
 	
-&gt; &lt;img src=&#34;http://localhost:1313/p/image-gallery/2.jpg&#34;
+&gt; &lt;img src=&#34;https://michellellehcim.github.io/p/image-gallery/2.jpg&#34;
 	width=&#34;1500&#34;
 	height=&#34;2250&#34;
-	srcset=&#34;http://localhost:1313/p/image-gallery/2_hu10699635480308914167.jpg 480w, http://localhost:1313/p/image-gallery/2_hu1741040415904021193.jpg 1024w&#34;
+	srcset=&#34;https://michellellehcim.github.io/p/image-gallery/2_hu10699635480308914167.jpg 480w, https://michellellehcim.github.io/p/image-gallery/2_hu1741040415904021193.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Image 2&#34;
@@ -404,11 +572,11 @@
         </item>
         <item>
         <title>Shortcodes</title>
-        <link>http://localhost:1313/p/shortcodes/</link>
+        <link>https://michellellehcim.github.io/p/shortcodes/</link>
         <pubDate>Fri, 25 Aug 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/shortcodes/</guid>
-        <description>&lt;img src="http://localhost:1313/p/shortcodes/cover.jpg" alt="Featured image of post Shortcodes" /&gt;&lt;p&gt;For more details, check out the &lt;a class=&#34;link&#34; href=&#34;https://stack.jimmycai.com/writing/shortcodes&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <guid>https://michellellehcim.github.io/p/shortcodes/</guid>
+        <description>&lt;img src="https://michellellehcim.github.io/p/shortcodes/cover.jpg" alt="Featured image of post Shortcodes" /&gt;&lt;p&gt;For more details, check out the &lt;a class=&#34;link&#34; href=&#34;https://stack.jimmycai.com/writing/shortcodes&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;documentation&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;bilibili-video&#34;&gt;Bilibili video
 &lt;/h2&gt;
@@ -487,10 +655,10 @@
         </item>
         <item>
         <title>Math Typesetting</title>
-        <link>http://localhost:1313/p/math-typesetting/</link>
+        <link>https://michellellehcim.github.io/p/math-typesetting/</link>
         <pubDate>Thu, 24 Aug 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/math-typesetting/</guid>
+        <guid>https://michellellehcim.github.io/p/math-typesetting/</guid>
         <description>&lt;p&gt;Stack has built-in support for math typesetting using &lt;a class=&#34;link&#34; href=&#34;https://katex.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;KaTeX&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;It&amp;rsquo;s not enabled by default side-wide,&lt;/strong&gt; but you can enable it for individual posts by adding &lt;code&gt;math: true&lt;/code&gt; to the front matter. Or you can enable it side-wide by adding &lt;code&gt;math = true&lt;/code&gt; to the &lt;code&gt;params.article&lt;/code&gt; section in &lt;code&gt;config.toml&lt;/code&gt;.&lt;/p&gt;
@@ -537,18 +705,18 @@ $$&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
         </item>
         <item>
         <title>Archives</title>
-        <link>http://localhost:1313/archives/</link>
+        <link>https://michellellehcim.github.io/archives/</link>
         <pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/archives/</guid>
+        <guid>https://michellellehcim.github.io/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>Links</title>
-        <link>http://localhost:1313/links/</link>
+        <link>https://michellellehcim.github.io/links/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/links/</guid>
+        <guid>https://michellellehcim.github.io/links/</guid>
         <description>&lt;p&gt;To use this feature, add &lt;code&gt;links&lt;/code&gt; section to frontmatter.&lt;/p&gt;
 &lt;p&gt;This page&amp;rsquo;s frontmatter:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -580,10 +748,10 @@ $$&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
         </item>
         <item>
         <title>Search</title>
-        <link>http://localhost:1313/search/</link>
+        <link>https://michellellehcim.github.io/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/search/</guid>
+        <guid>https://michellellehcim.github.io/search/</guid>
         <description></description>
         </item>
         

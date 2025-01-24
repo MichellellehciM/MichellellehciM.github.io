@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Markdown on Tomatos&#39;s Cat</title>
+        <link>https://michellellehcim.github.io/categories/markdown/</link>
+        <description>Recent content in Markdown on Tomatos&#39;s Cat</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <lastBuildDate>Tue, 15 Oct 2024 18:00:00 +0000</lastBuildDate><atom:link href="https://michellellehcim.github.io/categories/markdown/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>基礎Markdown語法</title>
+        <link>https://michellellehcim.github.io/p/intro-markdown-basic/</link>
+        <pubDate>Tue, 15 Oct 2024 18:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/p/intro-markdown-basic/</guid>
+        <description>&lt;img src="https://michellellehcim.github.io/p/intro-markdown-basic/markdown%E8%AA%9E%E6%B3%95_%E5%85%A5%E9%96%80%E7%AF%87.png" alt="Featured image of post 基礎Markdown語法" /&gt;&lt;blockquote&gt;
+&lt;p&gt;先到HackMD  &lt;a class=&#34;link&#34; href=&#34;https://hackmd.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://hackmd.io/&lt;/a&gt;  註冊一個帳號, 登入後左上角直接點選 &lt;code&gt;+ Create note&lt;/code&gt; 就可以開始寫筆記了 ~&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;以下是我整理的常用MD語法:&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;1-標題-heading--使用--符號來表示標題層級&#34;&gt;1. 標題 (Heading) : 使用 &lt;code&gt;#&lt;/code&gt; 符號來表示標題層級
+&lt;/h2&gt;&lt;p&gt;# 標題一&lt;/p&gt;
+&lt;p&gt;## 標題二&lt;/p&gt;
+&lt;p&gt;### 標題三&lt;/p&gt;
+&lt;p&gt;#### 標題四&lt;/p&gt;
+&lt;p&gt;##### 標題五&lt;/p&gt;
+&lt;p&gt;###### 標題六&lt;/p&gt;
+&lt;h1 id=&#34;標題一&#34;&gt;標題一
+&lt;/h1&gt;&lt;h2 id=&#34;標題二&#34;&gt;標題二
+&lt;/h2&gt;&lt;h3 id=&#34;標題三&#34;&gt;標題三
+&lt;/h3&gt;&lt;h4 id=&#34;標題四&#34;&gt;標題四
+&lt;/h4&gt;&lt;h5 id=&#34;標題五&#34;&gt;標題五
+&lt;/h5&gt;&lt;h6 id=&#34;標題六&#34;&gt;標題六
+&lt;/h6&gt;&lt;hr&gt;
+&lt;h2 id=&#34;2-粗體字-文字的前後都加上&#34;&gt;2. 粗體字: 文字的前後都加上&lt;code&gt;**&lt;/code&gt;
+&lt;/h2&gt;&lt;p&gt;這是**粗體文字**&lt;/p&gt;
+&lt;p&gt;這是 &lt;strong&gt;粗體文字&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3-斜體字-文字的前後都加上&#34;&gt;3. 斜體字: 文字的前後都加上&lt;code&gt;*&lt;/code&gt;
+&lt;/h2&gt;&lt;p&gt;這是*斜體文字*&lt;/p&gt;
+&lt;p&gt;這是&lt;em&gt;斜體文字&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;4-刪除線-文字的前後都加上&#34;&gt;4. 刪除線: 文字的前後都加上&lt;code&gt;~~&lt;/code&gt;
+&lt;/h2&gt;&lt;p&gt;這是~~刪除線~~&lt;/p&gt;
+&lt;p&gt;這是&lt;del&gt;刪除線&lt;/del&gt;&lt;/p&gt;
+&lt;h2 id=&#34;5-無序清單-項目前面使用---或--或--作為開頭&#34;&gt;5. 無序清單: 項目前面使用 &lt;code&gt;-&lt;/code&gt; 或 &lt;code&gt;+&lt;/code&gt; 或 &lt;code&gt;*&lt;/code&gt; 作為開頭
+&lt;/h2&gt;&lt;p&gt;- 項目 1 &lt;br&gt;
+- 項目 2 &lt;br&gt;
+* 項目 3 &lt;br&gt;
+* 項目 4 &lt;br&gt;
++ 項目 5 &lt;br&gt;
++ 項目 6 &lt;br&gt;&lt;/p&gt;
+&lt;p&gt;會自動縮排 &amp;amp; 分段如下:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;項目 1&lt;/li&gt;
+&lt;li&gt;項目 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;項目 3&lt;/li&gt;
+&lt;li&gt;項目 4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;項目 5&lt;/li&gt;
+&lt;li&gt;項目 6&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;６-有序清單-項目前面直接使用-數字作為開頭&#34;&gt;６. 有序清單: 項目前面直接使用 &lt;code&gt;數字+.&lt;/code&gt;作為開頭
+&lt;/h2&gt;&lt;p&gt;1. 項目 1 &lt;br&gt;
+2. 項目 2&lt;/p&gt;
+&lt;p&gt;會自動縮排如下:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;項目 1 &lt;br&gt;&lt;/li&gt;
+&lt;li&gt;項目 2 &lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;7-超連結-語法文字網址&#34;&gt;7. 超連結: 語法&lt;code&gt;[文字](網址)&lt;/code&gt;
+&lt;/h2&gt;&lt;p&gt;[Google](https://www.google.com)&lt;/p&gt;
+&lt;p&gt;會變成:&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.google.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Google&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;8-圖片-語法-替代文字圖片網址&#34;&gt;8. 圖片: 語法 &lt;code&gt;![替代文字](圖片網址)&lt;/code&gt;
+&lt;/h2&gt;&lt;p&gt;![Markdown Logo](https://markdown-here.com/img/icon256.png)
+&lt;/p&gt;
+&lt;p&gt;會變成:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://markdown-here.com/img/icon256.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Markdown Logo&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;9-分隔線-輸入----或--一定要連續輸入3個或3個以上才有效&#34;&gt;9. 分隔線: 輸入&lt;code&gt;---&lt;/code&gt; 或 &lt;code&gt;***&lt;/code&gt; (一定要連續輸入3個或3個以上才有效)
+&lt;/h2&gt;&lt;p&gt;--- (或 ***)&lt;/p&gt;
+&lt;p&gt;會變成:&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;10-引用-語法--文字&#34;&gt;10. 引用: 語法 &lt;code&gt;&amp;gt; 文字&lt;/code&gt;
+&lt;/h2&gt;&lt;p&gt;&amp;gt; 學程式好好玩&lt;/p&gt;
+&lt;p&gt;會變成:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;學程式好好玩&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;11-程式碼單行-程式碼前後加上--&#34;&gt;11. 程式碼(單行): 程式碼前後加上&lt;code&gt;`&lt;/code&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;(需要注意: &lt;code&gt;`&lt;/code&gt; 是在鍵盤最左上角, 和波浪 &lt;code&gt;~&lt;/code&gt; 是同個鍵)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;`console.log(&amp;lsquo;Hello, world!&amp;rsquo;) `&lt;/p&gt;
+&lt;p&gt;會變成:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;console.log(&#39;Hello, world!&#39;)&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;12-程式碼多行-程式碼前後加上--&#34;&gt;12. 程式碼(多行): 程式碼前後加上&lt;code&gt;```&lt;/code&gt;
+&lt;/h2&gt;&lt;p&gt;可以指定要哪一種程式語言，例如javascript&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;```javascript
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;function sayHello() {
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;    console.log(&amp;#39;Hello, world!&amp;#39;);
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;```&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;會變成:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;sayHello&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Hello, world!&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;13-表格-使用--和---建立表格&#34;&gt;13. 表格: 使用 &lt;code&gt;|&lt;/code&gt; 和 &lt;code&gt;-&lt;/code&gt; 建立表格
+&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;| 標題 1   | 標題 2   |
+|----------|----------|
+| 內容 1   | 內容 2   |
+| 內容 3   | 內容 4   |
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;會變成以下:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;標題 1&lt;/th&gt;
+          &lt;th&gt;標題 2&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;內容 1&lt;/td&gt;
+          &lt;td&gt;內容 2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;內容 3&lt;/td&gt;
+          &lt;td&gt;內容 4&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;14-任務清單-語法-----或-x&#34;&gt;14. 任務清單: 語法 &lt;code&gt;-&lt;/code&gt; , &lt;code&gt;[]&lt;/code&gt; 或 &lt;code&gt;[x]&lt;/code&gt;
+&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;- [x] 已完成項目
+- [ ] 未完成項目
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;會顯示:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 已完成項目&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 未完成項目&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;恭喜你已經學會基礎Markdown語法，是不是很簡單呢~&lt;/strong&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Discord on Tomatos&#39;s Cat</title>
-        <link>https://michellellehcim.github.io/tags/discord/</link>
+        <link>http://localhost:1313/tags/discord/</link>
         <description>Recent content in Discord on Tomatos&#39;s Cat</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
-        <lastBuildDate>Mon, 14 Oct 2024 18:00:00 +0000</lastBuildDate><atom:link href="https://michellellehcim.github.io/tags/discord/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 14 Oct 2024 18:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/discord/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>什麼是Discord?</title>
-        <link>https://michellellehcim.github.io/p/intro-discord/</link>
+        <link>http://localhost:1313/p/intro-discord/</link>
         <pubDate>Mon, 14 Oct 2024 18:00:00 +0000</pubDate>
         
-        <guid>https://michellellehcim.github.io/p/intro-discord/</guid>
-        <description>&lt;img src="https://michellellehcim.github.io/p/intro-discord/Discord-Symbol.webp" alt="Featured image of post 什麼是Discord?" /&gt;&lt;p&gt;下午終於開始上課了，老師要大家安裝一個平台叫做 &amp;ldquo;Discord&amp;rdquo; , 大家之後就可以在上面討論課程。&lt;/p&gt;
+        <guid>http://localhost:1313/p/intro-discord/</guid>
+        <description>&lt;img src="http://localhost:1313/p/intro-discord/Discord-Symbol.webp" alt="Featured image of post 什麼是Discord?" /&gt;&lt;p&gt;下午終於開始上課了，老師要大家安裝一個平台叫做 &amp;ldquo;Discord&amp;rdquo; , 大家之後就可以在上面討論課程。&lt;/p&gt;
 &lt;p&gt;Discord其實是一個即時訊息和語音通話平台，&lt;/p&gt;
 &lt;p&gt;最初是為遊戲玩家設計的，但現在已經擴展到許多不同的社群和團體使用。&lt;/p&gt;
 &lt;p&gt;它可以讓用戶創建伺服器（Server），並在這些伺服器內進行語音、文字聊天、文件共享等。&lt;/p&gt;

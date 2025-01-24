@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>日記 on Tomatos&#39;s Cat</title>
-        <link>https://michellellehcim.github.io/categories/%E6%97%A5%E8%A8%98/</link>
+        <link>http://localhost:1313/categories/%E6%97%A5%E8%A8%98/</link>
         <description>Recent content in 日記 on Tomatos&#39;s Cat</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
-        <lastBuildDate>Mon, 14 Oct 2024 18:00:00 +0000</lastBuildDate><atom:link href="https://michellellehcim.github.io/categories/%E6%97%A5%E8%A8%98/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 14 Oct 2024 18:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E6%97%A5%E8%A8%98/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>轉職日記-Day1</title>
-        <link>https://michellellehcim.github.io/p/day-1/</link>
+        <link>http://localhost:1313/p/day-1/</link>
         <pubDate>Mon, 14 Oct 2024 18:00:00 +0000</pubDate>
         
-        <guid>https://michellellehcim.github.io/p/day-1/</guid>
-        <description>&lt;img src="https://michellellehcim.github.io/p/day-1/day1_%E8%AA%8D%E8%AD%98%E6%96%B0%E5%90%8C%E5%AD%B8%E5%92%8C%E7%92%B0%E5%A2%83%E5%AE%89%E8%A3%9D.png" alt="Featured image of post 轉職日記-Day1" /&gt;&lt;p&gt;第一天開學的上午，課務組發給每人一張九宮格的遊戲單子，單子上面有各種問題，&lt;/p&gt;
+        <guid>http://localhost:1313/p/day-1/</guid>
+        <description>&lt;img src="http://localhost:1313/p/day-1/day1_%E8%AA%8D%E8%AD%98%E6%96%B0%E5%90%8C%E5%AD%B8%E5%92%8C%E7%92%B0%E5%A2%83%E5%AE%89%E8%A3%9D.png" alt="Featured image of post 轉職日記-Day1" /&gt;&lt;p&gt;第一天開學的上午，課務組發給每人一張九宮格的遊戲單子，單子上面有各種問題，&lt;/p&gt;
 &lt;p&gt;例如: 喜歡黑貓還是橘貓? 最喜歡吃什麼? 做過最瘋狂的事情是什麼?&lt;/p&gt;
 &lt;p&gt;大家需要離開座位隨機找不同人問這些問題，最後上台介紹你剛剛問了誰，他的回答又是什麼。&lt;/p&gt;
 &lt;p&gt;除了單子上的問題，大家也趁機透過聊天了解彼此的背景，&lt;/p&gt;
@@ -25,11 +25,11 @@
         </item>
         <item>
         <title>什麼是Discord?</title>
-        <link>https://michellellehcim.github.io/p/intro-discord/</link>
+        <link>http://localhost:1313/p/intro-discord/</link>
         <pubDate>Mon, 14 Oct 2024 18:00:00 +0000</pubDate>
         
-        <guid>https://michellellehcim.github.io/p/intro-discord/</guid>
-        <description>&lt;img src="https://michellellehcim.github.io/p/intro-discord/Discord-Symbol.webp" alt="Featured image of post 什麼是Discord?" /&gt;&lt;p&gt;下午終於開始上課了，老師要大家安裝一個平台叫做 &amp;ldquo;Discord&amp;rdquo; , 大家之後就可以在上面討論課程。&lt;/p&gt;
+        <guid>http://localhost:1313/p/intro-discord/</guid>
+        <description>&lt;img src="http://localhost:1313/p/intro-discord/Discord-Symbol.webp" alt="Featured image of post 什麼是Discord?" /&gt;&lt;p&gt;下午終於開始上課了，老師要大家安裝一個平台叫做 &amp;ldquo;Discord&amp;rdquo; , 大家之後就可以在上面討論課程。&lt;/p&gt;
 &lt;p&gt;Discord其實是一個即時訊息和語音通話平台，&lt;/p&gt;
 &lt;p&gt;最初是為遊戲玩家設計的，但現在已經擴展到許多不同的社群和團體使用。&lt;/p&gt;
 &lt;p&gt;它可以讓用戶創建伺服器（Server），並在這些伺服器內進行語音、文字聊天、文件共享等。&lt;/p&gt;
@@ -85,6 +85,41 @@
 &lt;p&gt;總的來說呢，Discord 是一個非常適合各種社群活動、團隊合作或娛樂交流的平台。&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Discord 安裝    &lt;a class=&#34;link&#34; href=&#34;https://discord.com/download&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://discord.com/download&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>工程師為什麼愛用HackMD?</title>
+        <link>http://localhost:1313/p/intro-hackmd/</link>
+        <pubDate>Mon, 14 Oct 2024 18:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/intro-hackmd/</guid>
+        <description>&lt;img src="http://localhost:1313/Discord-Symbol.webp" alt="Featured image of post 工程師為什麼愛用HackMD?" /&gt;&lt;p&gt;如果你也正在轉職，非常推薦你也學會用HackMD編輯器!&lt;/p&gt;
+&lt;h2 id=&#34;什麼是hackmd呢&#34;&gt;什麼是HackMD呢?
+&lt;/h2&gt;&lt;p&gt;HackMD 是一款 即時協作的線上 Markdown 編輯器。&lt;/p&gt;
+&lt;p&gt;它讓多人能夠同時在瀏覽器上編輯同一份 Markdown 文件，&lt;/p&gt;
+&lt;p&gt;類似 Google Docs 的即時協作功能，但需要建立在 Markdown 語法上。&lt;/p&gt;
+&lt;p&gt;以下是 HackMD 的一些特色與優點，說明為什麼許多工程師會喜歡使用它：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. 即時協作&lt;/strong&gt;
+多人可以同時在線上編輯同一份文件，並即時同步更新，避免「你改完後再給我改」的傳統流程。&lt;/p&gt;
+&lt;p&gt;在多人協作討論需求或整理筆記時，能大幅加速溝通。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. Markdown 語法支援&lt;/strong&gt;
+Markdown 是輕量級標記語言，對工程師與技術人員而言相對熟悉，簡潔易讀。&lt;/p&gt;
+&lt;p&gt;HackMD 提供即時預覽，輸入 Markdown 後，右側可同步顯示渲染結果。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3. 方便的整合與分享&lt;/strong&gt;
+可以透過共享連結讓其他人閱讀或編輯文件，並且能自訂存取權限（公開、私有或僅限連結存取）。&lt;/p&gt;
+&lt;p&gt;支援與 GitHub、GitLab、Gist 等整合，讓文件管理與版本控制更輕鬆。&lt;/p&gt;
+&lt;p&gt;產出的內容可以輕鬆轉成 HTML、PDF，或直接嵌入專案中。
+*4. 支援簡報模式
+HackMD 有內建的簡報功能，可將 Markdown 文件直接轉成簡報格式（底層使用 Reveal.js）。
+工程師可以用 Markdown 撰寫內容，一鍵切換為簡報模式，省去製作投影片的繁瑣流程。
+5. 自行部署（開源版本）
+如果對隱私或內部文件保密度有高要求，可以使用它的開源版本（舊名 CodiMD）在內部伺服器自行部署。
+對很多公司或組織來說，自行掌控資料所有權非常重要。
+6. 對工程師來說的優勢
+熟悉的工作模式：Markdown 已在技術社群普及，結合 GitHub、GitLab，能無縫融入程式文件、生產力工具的工作流程。
+快速協作：與其他開發者或跨部門同事共同撰寫技術文檔、需求規格，討論和修改同一份文件變得很直覺。
+減少版本混亂：不需要再用 email 或多個版本檔案來回傳遞，降低「哪一版才是最新？」的疑慮。
+一站式備忘：能直接在 HackMD 撰寫並整理各種筆記、教學文章或專案 Wiki，統一在同一平台中管理。&lt;/p&gt;
 </description>
         </item>
         

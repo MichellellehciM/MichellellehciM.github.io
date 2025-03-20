@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>JavaScript on Tomatos&#39;s Cat</title>
+        <link>https://michellellehcim.github.io/tags/javascript/</link>
+        <description>Recent content in JavaScript on Tomatos&#39;s Cat</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <lastBuildDate>Tue, 15 Oct 2024 20:00:00 +0000</lastBuildDate><atom:link href="https://michellellehcim.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>網站為什麼這麼快？原來是因為 Node.js！</title>
+        <link>https://michellellehcim.github.io/p/node-js-intro/</link>
+        <pubDate>Tue, 15 Oct 2024 20:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/p/node-js-intro/</guid>
+        <description>&lt;img src="https://michellellehcim.github.io/p/node-js-intro/node_js.png" alt="Featured image of post 網站為什麼這麼快？原來是因為 Node.js！" /&gt;&lt;h1 id=&#34;什麼是-nodejs&#34;&gt;什麼是 Node.js？
+&lt;/h1&gt;&lt;p&gt;簡單來說，&lt;strong&gt;Node.js&lt;/strong&gt; 是一個讓你在電腦上執行 JavaScript 程式的工具。這跟你在網頁瀏覽器上看到的 JavaScript 不太一樣，因為它可以直接運行在電腦上，而不需要透過瀏覽器。&lt;/p&gt;
+&lt;p&gt;但它的用途遠不止於此~ 它讓 JavaScript 不再只限於瀏覽器內運行，而能用來開發功能強大的應用程式，例如伺服器、API 服務、工具應用等。&lt;/p&gt;
+&lt;h1 id=&#34;nodejs-的優點&#34;&gt;Node.js 的優點
+&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;非同步與事件驅動架構 (Asynchronous and Event-Driven)&lt;/strong&gt;：讓伺服器可以同時處理多個請求。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;JavaScript 友好 (JavaScript-Friendly)&lt;/strong&gt;：如果你有點 JavaScript 基礎，在學習 Node.js 上會更上手!&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;豐富的模組庫 (Rich Module Library, npm)&lt;/strong&gt;：可以使用數十萬個免費模組，現成的工具能幫你快速完成專案。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;可以用-nodejs-做什麼&#34;&gt;可以用 Node.js 做什麼？
+&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;建立後端伺服器 (Build Backend Servers)&lt;/strong&gt;&lt;br&gt;
+透過 Node.js，你可以快速建立一個處理用戶請求的伺服器，像是處理資料上傳、提供網頁內容，甚至管理使用者帳號。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;即時應用 (Real-Time Applications)&lt;/strong&gt;&lt;br&gt;
+開發聊天系統、即時遊戲或即時通知等需要快速資料更新的應用程式。例如，你可以用 Node.js 開發一個多人聊天室。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;搭建 API (Build APIs)&lt;/strong&gt;&lt;br&gt;
+Node.js 常被用來構建 REST API 或 GraphQL API，這樣你的前端應用程式或其他服務可以和後端資料庫溝通。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;處理資料 (Handle Data)&lt;/strong&gt;&lt;br&gt;
+使用 Node.js，可以讀寫檔案、操作資料庫，甚至處理大量的資料流，像是處理影片或音訊檔案。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;自動化工具 (Automation Tools)&lt;/strong&gt;&lt;br&gt;
+你可以用 Node.js 寫腳本，幫助你完成一些繁瑣的工作，比如檔案壓縮、圖片批次處理或自動測試程式碼。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;構建桌面應用 (Build Desktop Applications)&lt;/strong&gt;&lt;br&gt;
+結合框架如 Electron，你可以用 Node.js 開發跨平台的桌面應用程式，例如 Visual Studio Code 就是用 Node.js 製作的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;打造高效能網站 (Create High-Performance Websites)&lt;/strong&gt;&lt;br&gt;
+Node.js 能讓你建造能快速處理大量請求的網站，特別適合處理高流量的應用，例如購物網站或媒體平台。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;物聯網開發 (IoT Development)&lt;/strong&gt;&lt;br&gt;
+結合硬體裝置，Node.js 可用於開發 IoT 應用程式，像是連接智能設備並處理資料。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;怎麼用-nodejs&#34;&gt;怎麼用 Node.js？
+&lt;/h2&gt;&lt;p&gt;官網上的示範很簡單，以下是大致步驟：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;下載 Node.js（選擇 LTS）&lt;/strong&gt;&lt;br&gt;
+到 &lt;a class=&#34;link&#34; href=&#34;https://nodejs.org&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Node.js 官網&lt;/a&gt; 下載並安裝 &lt;strong&gt;LTS 版本&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;檢查安裝是否成功&lt;/strong&gt;&lt;br&gt;
+打開終端機（Terminal 或命令提示字元），輸入以下指令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;node -v
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如果顯示版本號（例如 v20.18.0），表示安裝成功！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;執行一段 JavaScript 程式&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;輸入:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;node
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;按下Enter, 然後繼續輸入以下程式碼:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;console.log(&amp;#39;Hello, Node.js!&amp;#39;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;按下Enter會看到程式輸出結果。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;還可以按照官網步驟&lt;strong&gt;建立一個簡單的伺服器&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;createServer&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;node:http&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//建立伺服器
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;server&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;createServer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;writeHead&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;200&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;text/plain&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;end&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Welcome to Node.js Server!\n&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// 伺服器在http://127.0.0.1:3000監聽
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;server&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;listen&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;127.0.0.1&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;伺服器運行中：http://127.0.0.1:3000/&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;將以上程式碼存為server.mjs （檔名的副檔名 .mjs 是 Node.js 的 ES Module 格式），然後在終端機執行&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;node server.mjs
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;執行後，終端機會出現以下訊息，表示伺服器已經成功啟動:&lt;/p&gt;
+&lt;p&gt;伺服器運行中：http://127.0.0.1:3000/&lt;/p&gt;
+&lt;p&gt;打開就能看到訊息：Welcome to Node.js Server!&lt;/p&gt;
+&lt;p&gt;如果想停止伺服器，回到終端機，按下 Ctrl + C&lt;/p&gt;
+&lt;p&gt;這樣你就已經完成了一個簡單的HTTP伺服器了，當你在瀏覽器訪問http://127.0.0.1:3000時，伺服器會接到一個HTTP請求(request)。&lt;/p&gt;
+&lt;p&gt;它會回應(response)一段文字: Welcom to Node.js Server!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;lt;示範&amp;gt; 我用VS Code編輯器
+&lt;img src=&#34;https://michellellehcim.github.io/p/node-js-intro/server-mjs.png&#34;
+	width=&#34;2218&#34;
+	height=&#34;1468&#34;
+	srcset=&#34;https://michellellehcim.github.io/p/node-js-intro/server-mjs_hu1929042067120422377.png 480w, https://michellellehcim.github.io/p/node-js-intro/server-mjs_hu6277262893207419473.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;alt text&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;151&#34;
+		data-flex-basis=&#34;362px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;總結&#34;&gt;總結
+&lt;/h2&gt;&lt;p&gt;Node.js 是一個強大又靈活的工具，不僅適合建立伺服器，還能用來開發各種應用程式。無論你是新手還是有經驗的開發者，Node.js 都能幫助你快速開發功能，讓網站和應用程式的效能更上一層樓！&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

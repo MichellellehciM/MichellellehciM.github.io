@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>後端開發 on Tomatos&#39;s Cat</title>
+        <link>https://michellellehcim.github.io/tags/%E5%BE%8C%E7%AB%AF%E9%96%8B%E7%99%BC/</link>
+        <description>Recent content in 後端開發 on Tomatos&#39;s Cat</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <lastBuildDate>Fri, 18 Oct 2024 10:00:00 +0000</lastBuildDate><atom:link href="https://michellellehcim.github.io/tags/%E5%BE%8C%E7%AB%AF%E9%96%8B%E7%99%BC/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>網站是怎麼運作的？</title>
+        <link>https://michellellehcim.github.io/p/web-work/</link>
+        <pubDate>Fri, 18 Oct 2024 10:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/p/web-work/</guid>
+        <description>&lt;img src="https://michellellehcim.github.io/p/web-work/web_work.png" alt="Featured image of post 網站是怎麼運作的？" /&gt;&lt;h1 id=&#34;-網站是怎麼運作的&#34;&gt;🌐 網站是怎麼運作的？
+&lt;/h1&gt;&lt;p&gt;你有沒有好奇過，當我們打開一個網站的時候，背後到底發生了什麼？今天，我們來聊聊網站的運作方式，以及如何建立一個購物網站的前端和後端架構。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-前端和後端誰負責什麼&#34;&gt;🖥️ 前端和後端：誰負責什麼？
+&lt;/h2&gt;&lt;p&gt;一個網站通常分為兩個主要部分：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;🎨 前端（Front-end）&lt;/strong&gt;：使用者看到的部分，包括畫面、按鈕、文字和圖片。它負責和使用者互動，內容會在瀏覽器中運行。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;🔧 後端（Back-end）&lt;/strong&gt;：藏在幕後的部分，運行在伺服器上，負責處理資料、驗證規則，並確保前端取得正確資訊。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-使用者訪問網站時發生了什麼&#34;&gt;🌍 使用者訪問網站時發生了什麼？
+&lt;/h2&gt;&lt;p&gt;假設使用者 Jenny 想逛我們的購物網站，她在瀏覽器輸入 &lt;code&gt;goodbuy.com&lt;/code&gt;，然後按下 Enter。這時：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;瀏覽器會發送一個請求，類似說：「嗨~~我想看看首頁！」&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;伺服器收到後會處理這個請求，然後回傳結果給瀏覽器。這一來一回的過程是透過 &lt;strong&gt;HTTP（🔗 Hypertext Transfer Protocol）&lt;/strong&gt; 完成的，這是一種讓瀏覽器和伺服器溝通的語言。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(註) &lt;code&gt;goodbuy.com&lt;/code&gt;是&lt;strong&gt;URL（🌐 Uniform Resource Locator）&lt;/strong&gt; 等於是網站的地址，幫助 Jenny 的瀏覽器找到伺服器。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-後端如何提供內容&#34;&gt;⚙️ 後端如何提供內容？
+&lt;/h2&gt;&lt;p&gt;當伺服器收到請求後，有兩種方式回應：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;📄 生成完整的網頁並回傳&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;伺服器會使用 &lt;strong&gt;HTML（超文本標記語言）&lt;/strong&gt; 建立完整的網頁，然後傳送給使用者。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;📊 只提供所需數據，讓前端生成頁面&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;伺服器只傳回資料（例如產品清單），由前端工具（如 React）生成畫面。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-選擇第二種方式的好處&#34;&gt;🤔 選擇第二種方式的好處:
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;減輕伺服器壓力&lt;/strong&gt;：伺服器只專注處理數據，能夠服務更多使用者。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;擴展性更好&lt;/strong&gt;：隨著用戶數量增加，伺服器的負擔也更容易管理。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;這也是為什麼現在越來越多網站使用 &lt;strong&gt;React&lt;/strong&gt;、&lt;strong&gt;Angular&lt;/strong&gt; 和 &lt;strong&gt;Vue&lt;/strong&gt; 來處理前端。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-後端的角色資料的管家&#34;&gt;🛠️ 後端的角色：資料的管家
+&lt;/h2&gt;&lt;p&gt;如果把頁面生成交給前端，那後端的主要任務就是管理數據，並提供 &lt;strong&gt;API（應用程式介面，Application Programming Interface）&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;-api-是什麼&#34;&gt;🎛️ API 是什麼？
+&lt;/h3&gt;&lt;p&gt;API 就像遙控器上的按鈕：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;每個按鈕都有特定功能，比如開關電視或調整音量。&lt;/li&gt;
+&lt;li&gt;同樣，API 是伺服器提供的「按鈕」，讓前端用來取得產品資料或提交訂單。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-用-django-建立-api&#34;&gt;🐍 用 Django 建立 API
+&lt;/h2&gt;&lt;p&gt;在後端世界裡，&lt;strong&gt;Django&lt;/strong&gt; 是一個非常受歡迎的框架，能快速幫助我們建立 API：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Django 讓處理數據和提供接口變得更簡單高效。&lt;/li&gt;
+&lt;li&gt;前端應用（例如使用 React 或 Angular 開發的網站）可以透過 API 與後端互動，完成查詢產品或提交訂單的功能。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-結論&#34;&gt;🏁 結論
+&lt;/h2&gt;&lt;p&gt;現代網站開發強調分工合作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;🎨 前端&lt;/strong&gt; 負責生成畫面，提升使用者體驗。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;🔧 後端&lt;/strong&gt; 專注處理數據和業務邏輯，提供高效的 API。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果你想建立一個高效的網站，像 Django 這樣的後端框架絕對是值得考慮的好選擇！希望這次的分享讓你對網站的運作有更清楚的了解！ 🚀&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>為什麼Youtube、instagrm等知名企業愛用 Django？</title>
+        <link>https://michellellehcim.github.io/p/django-intro/</link>
+        <pubDate>Wed, 16 Oct 2024 20:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/p/django-intro/</guid>
+        <description>&lt;img src="https://michellellehcim.github.io/p/django-intro/django_intro.png" alt="Featured image of post 為什麼Youtube、instagrm等知名企業愛用 Django？" /&gt;&lt;p&gt;Django 是目前最受歡迎的 Web 框架之一，許多企業，包括 &lt;strong&gt;Instagram、Spotify、Dropbox、Pinterest&lt;/strong&gt; 等，都選擇 Django 作為開發後端的主要技術。為什麼 Django 受到企業青睞？本文將從 &lt;strong&gt;開發效率、安全性、可擴展性、社群支持&lt;/strong&gt; 等方面分析 Django 的優勢。&lt;/p&gt;
+&lt;h2 id=&#34;1-開發效率高&#34;&gt;1. 開發效率高
+&lt;/h2&gt;&lt;p&gt;Django 遵循 &lt;strong&gt;&amp;ldquo;Batteries Included&amp;rdquo;（電池全配）&lt;/strong&gt; 原則，內建許多強大的功能，減少開發者從零開始設計系統的時間。&lt;/p&gt;
+&lt;h3 id=&#34;-內建功能&#34;&gt;✅ 內建功能
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ORM（Object-Relational Mapping）&lt;/strong&gt;：讓開發者用 Python 直接操作資料庫，避免手寫 SQL。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;身份驗證（Auth System）&lt;/strong&gt;：內建用戶管理系統，處理登入、註冊、權限控管。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Admin Panel（管理後台）&lt;/strong&gt;：自動生成管理介面，方便管理數據。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;表單處理（Forms）&lt;/strong&gt;：內建表單驗證與數據處理，提高開發效率。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-快速開發-mvp&#34;&gt;✅ 快速開發 MVP
+&lt;/h3&gt;&lt;p&gt;Django 幫助企業快速建立 &lt;strong&gt;最小可行產品（MVP）&lt;/strong&gt;，適合新創公司測試市場需求，降低開發成本。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;2-高安全性&#34;&gt;2. 高安全性
+&lt;/h2&gt;&lt;p&gt;Django 內建多種安全機制，幫助企業降低安全風險，避免常見的 Web 攻擊。&lt;/p&gt;
+&lt;h3 id=&#34;-內建安全防護&#34;&gt;🔒 內建安全防護
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;SQL Injection 防護&lt;/strong&gt;：ORM 自動處理 SQL 查詢，避免 SQL 注入攻擊。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CSRF（跨站請求偽造）防護&lt;/strong&gt;：防止未經授權的請求。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;XSS（跨站腳本攻擊）防護&lt;/strong&gt;：自動轉義 HTML，防止惡意腳本執行。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;密碼加密存儲&lt;/strong&gt;：使用 PBKDF2、Argon2、BCrypt 等強大加密算法。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;對於處理&lt;strong&gt;敏感數據&lt;/strong&gt;的企業（如金融、醫療、電子商務），Django 是一個值得信賴的選擇。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;3-可擴展性強&#34;&gt;3. 可擴展性強
+&lt;/h2&gt;&lt;p&gt;Django 適用於 &lt;strong&gt;從小型應用到大型系統&lt;/strong&gt;，隨著業務成長，可以輕鬆擴展。&lt;/p&gt;
+&lt;h3 id=&#34;-企業級擴展能力&#34;&gt;📈 企業級擴展能力
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;支援快取（Caching）&lt;/strong&gt;：Redis、Memcached 讓 Django 快速處理大量請求。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;可水平擴展&lt;/strong&gt;：支援負載均衡，可擴展到多台伺服器。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;支援 Microservices&lt;/strong&gt;：透過 Django REST Framework（DRF），可輕鬆開發 API 服務，適合微服務架構。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;許多大型應用，如 &lt;strong&gt;Instagram、Disqus、Mozilla&lt;/strong&gt;，都用 Django 來處理大規模流量。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;4-強大的社群與企業支持&#34;&gt;4. 強大的社群與企業支持
+&lt;/h2&gt;&lt;p&gt;Django 由 &lt;strong&gt;Django Software Foundation（DSF）&lt;/strong&gt; 維護，擁有活躍的開源社群和大量第三方套件。&lt;/p&gt;
+&lt;h3 id=&#34;-企業與開發者社群&#34;&gt;🌍 企業與開發者社群
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;開發者眾多&lt;/strong&gt;：Python 是全球最受歡迎的語言之一，學習 Django 門檻低。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;第三方擴展豐富&lt;/strong&gt;：如 Django REST Framework（DRF）、Celery（背景任務）、Channels（即時應用）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;免費與開源&lt;/strong&gt;：Django 採用 BSD 授權，企業可自由使用，無需支付授權費。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這些優勢讓 Django 成為企業開發的首選之一。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;5-與-python-生態系統無縫整合&#34;&gt;5. 與 Python 生態系統無縫整合
+&lt;/h2&gt;&lt;p&gt;Python 是 &lt;strong&gt;AI、機器學習、數據分析&lt;/strong&gt; 領域的熱門語言，而 Django 可以輕鬆與這些技術結合。&lt;/p&gt;
+&lt;h3 id=&#34;-ai--數據應用&#34;&gt;🤖 AI / 數據應用
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Django + Pandas / NumPy&lt;/strong&gt;：適合數據分析應用。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Django + TensorFlow / PyTorch&lt;/strong&gt;：可開發 AI 應用。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Django + Celery&lt;/strong&gt;：用於處理大規模數據、排程任務。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;對於 AI 驅動的企業，如 &lt;strong&gt;Netflix、Spotify&lt;/strong&gt;，Django 是理想的選擇。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-結論django-為何受企業歡迎&#34;&gt;🔥 結論：Django 為何受企業歡迎？
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;企業需求&lt;/th&gt;
+          &lt;th&gt;Django 解決方案&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;快速開發&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;內建 ORM、Auth、Admin Panel，提高開發效率&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;高安全性&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;內建 CSRF、XSS、SQL Injection 防護&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;可擴展性&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;支援快取、負載均衡、微服務架構&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;AI / 數據應用&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;與 Python 生態整合，適合數據驅動企業&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;社群與企業支持&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;開源、免費、大量第三方套件支援&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;綜合來看，Django 具備 &lt;strong&gt;高效、安全、可擴展&lt;/strong&gt; 的特性，能夠滿足企業從小型應用到大型系統的需求，因此成為許多企業的首選 Web 框架！🚀&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;📌 &lt;strong&gt;你使用過 Django 嗎？歡迎留言分享你的開發經驗！&lt;/strong&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>網站為什麼這麼快？原來是因為 Node.js！</title>
+        <link>https://michellellehcim.github.io/p/node-js-intro/</link>
+        <pubDate>Tue, 15 Oct 2024 20:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/p/node-js-intro/</guid>
+        <description>&lt;img src="https://michellellehcim.github.io/p/node-js-intro/node_js.png" alt="Featured image of post 網站為什麼這麼快？原來是因為 Node.js！" /&gt;&lt;h1 id=&#34;什麼是-nodejs&#34;&gt;什麼是 Node.js？
+&lt;/h1&gt;&lt;p&gt;簡單來說，&lt;strong&gt;Node.js&lt;/strong&gt; 是一個讓你在電腦上執行 JavaScript 程式的工具。這跟你在網頁瀏覽器上看到的 JavaScript 不太一樣，因為它可以直接運行在電腦上，而不需要透過瀏覽器。&lt;/p&gt;
+&lt;p&gt;但它的用途遠不止於此~ 它讓 JavaScript 不再只限於瀏覽器內運行，而能用來開發功能強大的應用程式，例如伺服器、API 服務、工具應用等。&lt;/p&gt;
+&lt;h1 id=&#34;nodejs-的優點&#34;&gt;Node.js 的優點
+&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;非同步與事件驅動架構 (Asynchronous and Event-Driven)&lt;/strong&gt;：讓伺服器可以同時處理多個請求。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;JavaScript 友好 (JavaScript-Friendly)&lt;/strong&gt;：如果你有點 JavaScript 基礎，在學習 Node.js 上會更上手!&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;豐富的模組庫 (Rich Module Library, npm)&lt;/strong&gt;：可以使用數十萬個免費模組，現成的工具能幫你快速完成專案。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;可以用-nodejs-做什麼&#34;&gt;可以用 Node.js 做什麼？
+&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;建立後端伺服器 (Build Backend Servers)&lt;/strong&gt;&lt;br&gt;
+透過 Node.js，你可以快速建立一個處理用戶請求的伺服器，像是處理資料上傳、提供網頁內容，甚至管理使用者帳號。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;即時應用 (Real-Time Applications)&lt;/strong&gt;&lt;br&gt;
+開發聊天系統、即時遊戲或即時通知等需要快速資料更新的應用程式。例如，你可以用 Node.js 開發一個多人聊天室。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;搭建 API (Build APIs)&lt;/strong&gt;&lt;br&gt;
+Node.js 常被用來構建 REST API 或 GraphQL API，這樣你的前端應用程式或其他服務可以和後端資料庫溝通。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;處理資料 (Handle Data)&lt;/strong&gt;&lt;br&gt;
+使用 Node.js，可以讀寫檔案、操作資料庫，甚至處理大量的資料流，像是處理影片或音訊檔案。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;自動化工具 (Automation Tools)&lt;/strong&gt;&lt;br&gt;
+你可以用 Node.js 寫腳本，幫助你完成一些繁瑣的工作，比如檔案壓縮、圖片批次處理或自動測試程式碼。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;構建桌面應用 (Build Desktop Applications)&lt;/strong&gt;&lt;br&gt;
+結合框架如 Electron，你可以用 Node.js 開發跨平台的桌面應用程式，例如 Visual Studio Code 就是用 Node.js 製作的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;打造高效能網站 (Create High-Performance Websites)&lt;/strong&gt;&lt;br&gt;
+Node.js 能讓你建造能快速處理大量請求的網站，特別適合處理高流量的應用，例如購物網站或媒體平台。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;物聯網開發 (IoT Development)&lt;/strong&gt;&lt;br&gt;
+結合硬體裝置，Node.js 可用於開發 IoT 應用程式，像是連接智能設備並處理資料。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;怎麼用-nodejs&#34;&gt;怎麼用 Node.js？
+&lt;/h2&gt;&lt;p&gt;官網上的示範很簡單，以下是大致步驟：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;下載 Node.js（選擇 LTS）&lt;/strong&gt;&lt;br&gt;
+到 &lt;a class=&#34;link&#34; href=&#34;https://nodejs.org&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Node.js 官網&lt;/a&gt; 下載並安裝 &lt;strong&gt;LTS 版本&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;檢查安裝是否成功&lt;/strong&gt;&lt;br&gt;
+打開終端機（Terminal 或命令提示字元），輸入以下指令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;node -v
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如果顯示版本號（例如 v20.18.0），表示安裝成功！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;執行一段 JavaScript 程式&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;輸入:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;node
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;按下Enter, 然後繼續輸入以下程式碼:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;console.log(&amp;#39;Hello, Node.js!&amp;#39;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;按下Enter會看到程式輸出結果。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;還可以按照官網步驟&lt;strong&gt;建立一個簡單的伺服器&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;createServer&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;node:http&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//建立伺服器
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;server&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;createServer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;writeHead&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;200&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;text/plain&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;end&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Welcome to Node.js Server!\n&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// 伺服器在http://127.0.0.1:3000監聽
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;server&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;listen&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;127.0.0.1&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;伺服器運行中：http://127.0.0.1:3000/&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;將以上程式碼存為server.mjs （檔名的副檔名 .mjs 是 Node.js 的 ES Module 格式），然後在終端機執行&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;node server.mjs
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;執行後，終端機會出現以下訊息，表示伺服器已經成功啟動:&lt;/p&gt;
+&lt;p&gt;伺服器運行中：http://127.0.0.1:3000/&lt;/p&gt;
+&lt;p&gt;打開就能看到訊息：Welcome to Node.js Server!&lt;/p&gt;
+&lt;p&gt;如果想停止伺服器，回到終端機，按下 Ctrl + C&lt;/p&gt;
+&lt;p&gt;這樣你就已經完成了一個簡單的HTTP伺服器了，當你在瀏覽器訪問http://127.0.0.1:3000時，伺服器會接到一個HTTP請求(request)。&lt;/p&gt;
+&lt;p&gt;它會回應(response)一段文字: Welcom to Node.js Server!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;lt;示範&amp;gt; 我用VS Code編輯器
+&lt;img src=&#34;https://michellellehcim.github.io/p/node-js-intro/server-mjs.png&#34;
+	width=&#34;2218&#34;
+	height=&#34;1468&#34;
+	srcset=&#34;https://michellellehcim.github.io/p/node-js-intro/server-mjs_hu1929042067120422377.png 480w, https://michellellehcim.github.io/p/node-js-intro/server-mjs_hu6277262893207419473.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;alt text&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;151&#34;
+		data-flex-basis=&#34;362px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;總結&#34;&gt;總結
+&lt;/h2&gt;&lt;p&gt;Node.js 是一個強大又靈活的工具，不僅適合建立伺服器，還能用來開發各種應用程式。無論你是新手還是有經驗的開發者，Node.js 都能幫助你快速開發功能，讓網站和應用程式的效能更上一層樓！&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

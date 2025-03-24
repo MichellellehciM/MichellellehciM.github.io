@@ -2,25 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://michellellehcim.github.io/p/hello-world/</loc>
-    <lastmod>2022-03-06T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://michellellehcim.github.io/</loc>
-    <lastmod>2024-10-18T10:00:00+00:00</lastmod>
+    <lastmod>2024-11-24T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://michellellehcim.github.io/categories/</loc>
+    <lastmod>2024-11-24T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://michellellehcim.github.io/tags/magic-method/</loc>
+    <lastmod>2024-11-24T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://michellellehcim.github.io/post/</loc>
+    <lastmod>2024-11-24T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://michellellehcim.github.io/categories/python/</loc>
+    <lastmod>2024-11-24T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://michellellehcim.github.io/p/python-underscore/</loc>
+    <lastmod>2024-11-24T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://michellellehcim.github.io/tags/python%E5%9F%BA%E7%A4%8E/</loc>
+    <lastmod>2024-11-24T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://michellellehcim.github.io/tags/</loc>
+    <lastmod>2024-11-24T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://michellellehcim.github.io/tags/%E5%91%BD%E5%90%8D%E8%A6%8F%E7%AF%84/</loc>
+    <lastmod>2024-11-24T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://michellellehcim.github.io/tags/%E5%BA%95%E7%B7%9A%E7%94%A8%E6%B3%95/</loc>
+    <lastmod>2024-11-24T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://michellellehcim.github.io/categories/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/</loc>
+    <lastmod>2024-11-24T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://michellellehcim.github.io/tags/%E9%AD%94%E8%A1%93%E6%96%B9%E6%B3%95/</loc>
+    <lastmod>2024-11-24T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://michellellehcim.github.io/tags/api%E8%A8%AD%E8%A8%88/</loc>
     <lastmod>2024-10-18T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://michellellehcim.github.io/categories/</loc>
-    <lastmod>2024-10-18T10:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://michellellehcim.github.io/tags/django/</loc>
-    <lastmod>2024-10-18T10:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://michellellehcim.github.io/post/</loc>
-    <lastmod>2024-10-18T10:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://michellellehcim.github.io/tags/</loc>
     <lastmod>2024-10-18T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://michellellehcim.github.io/tags/web%E6%9E%B6%E6%A7%8B/</loc>
@@ -33,9 +54,6 @@
     <lastmod>2024-10-18T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://michellellehcim.github.io/tags/%E7%8F%BE%E4%BB%A3%E7%B6%B2%E7%AB%99%E9%96%8B%E7%99%BC/</loc>
-    <lastmod>2024-10-18T10:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://michellellehcim.github.io/categories/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/</loc>
     <lastmod>2024-10-18T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://michellellehcim.github.io/p/web-work/</loc>
@@ -125,14 +143,10 @@
     <loc>https://michellellehcim.github.io/archives/</loc>
     <lastmod>2022-03-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://michellellehcim.github.io/categories/example-category/</loc>
-    <lastmod>2022-03-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://michellellehcim.github.io/tags/example-tag/</loc>
-    <lastmod>2022-03-06T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://michellellehcim.github.io/page/</loc>
     <lastmod>2022-03-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://michellellehcim.github.io/categories/example-category/</loc>
   </url><url>
     <loc>https://michellellehcim.github.io/links/</loc>
   </url><url>

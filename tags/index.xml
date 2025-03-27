@@ -6,20 +6,52 @@
         <description>Recent content in Tags on Tomatos&#39;s Cat</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
-        <lastBuildDate>Sun, 24 Nov 2024 10:00:00 +0000</lastBuildDate><atom:link href="https://michellellehcim.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Magic Method</title>
-        <link>https://michellellehcim.github.io/tags/magic-method/</link>
-        <pubDate>Sun, 24 Nov 2024 10:00:00 +0000</pubDate>
+        <lastBuildDate>Mon, 25 Nov 2024 11:00:00 +0000</lastBuildDate><atom:link href="https://michellellehcim.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Class</title>
+        <link>https://michellellehcim.github.io/tags/class/</link>
+        <pubDate>Mon, 25 Nov 2024 11:00:00 +0000</pubDate>
         
-        <guid>https://michellellehcim.github.io/tags/magic-method/</guid>
+        <guid>https://michellellehcim.github.io/tags/class/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>OOP</title>
+        <link>https://michellellehcim.github.io/tags/oop/</link>
+        <pubDate>Mon, 25 Nov 2024 11:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/oop/</guid>
         <description></description>
         </item>
         <item>
         <title>Python基礎</title>
         <link>https://michellellehcim.github.io/tags/python%E5%9F%BA%E7%A4%8E/</link>
-        <pubDate>Sun, 24 Nov 2024 10:00:00 +0000</pubDate>
+        <pubDate>Mon, 25 Nov 2024 11:00:00 +0000</pubDate>
         
         <guid>https://michellellehcim.github.io/tags/python%E5%9F%BA%E7%A4%8E/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Super</title>
+        <link>https://michellellehcim.github.io/tags/super/</link>
+        <pubDate>Mon, 25 Nov 2024 11:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/super/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>繼承 Inheritance</title>
+        <link>https://michellellehcim.github.io/tags/%E7%B9%BC%E6%89%BF-inheritance/</link>
+        <pubDate>Mon, 25 Nov 2024 11:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/%E7%B9%BC%E6%89%BF-inheritance/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Magic Method</title>
+        <link>https://michellellehcim.github.io/tags/magic-method/</link>
+        <pubDate>Sun, 24 Nov 2024 10:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/magic-method/</guid>
         <description></description>
         </item>
         <item>

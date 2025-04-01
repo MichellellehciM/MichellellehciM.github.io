@@ -6,20 +6,44 @@
         <description>Recent content in Tags on Tomatos&#39;s Cat</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
-        <lastBuildDate>Thu, 28 Nov 2024 10:00:00 +0000</lastBuildDate><atom:link href="https://michellellehcim.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Docstring</title>
-        <link>https://michellellehcim.github.io/tags/docstring/</link>
-        <pubDate>Thu, 28 Nov 2024 10:00:00 +0000</pubDate>
+        <lastBuildDate>Fri, 29 Nov 2024 10:00:00 +0000</lastBuildDate><atom:link href="https://michellellehcim.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>F-String</title>
+        <link>https://michellellehcim.github.io/tags/f-string/</link>
+        <pubDate>Fri, 29 Nov 2024 10:00:00 +0000</pubDate>
         
-        <guid>https://michellellehcim.github.io/tags/docstring/</guid>
+        <guid>https://michellellehcim.github.io/tags/f-string/</guid>
         <description></description>
         </item>
         <item>
         <title>Python基礎</title>
         <link>https://michellellehcim.github.io/tags/python%E5%9F%BA%E7%A4%8E/</link>
-        <pubDate>Thu, 28 Nov 2024 10:00:00 +0000</pubDate>
+        <pubDate>Fri, 29 Nov 2024 10:00:00 +0000</pubDate>
         
         <guid>https://michellellehcim.github.io/tags/python%E5%9F%BA%E7%A4%8E/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>字串</title>
+        <link>https://michellellehcim.github.io/tags/%E5%AD%97%E4%B8%B2/</link>
+        <pubDate>Fri, 29 Nov 2024 10:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/%E5%AD%97%E4%B8%B2/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>格式化</title>
+        <link>https://michellellehcim.github.io/tags/%E6%A0%BC%E5%BC%8F%E5%8C%96/</link>
+        <pubDate>Fri, 29 Nov 2024 10:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/%E6%A0%BC%E5%BC%8F%E5%8C%96/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Docstring</title>
+        <link>https://michellellehcim.github.io/tags/docstring/</link>
+        <pubDate>Thu, 28 Nov 2024 10:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/docstring/</guid>
         <description></description>
         </item>
         <item>

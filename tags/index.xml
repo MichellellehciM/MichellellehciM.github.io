@@ -6,20 +6,44 @@
         <description>Recent content in Tags on Tomatos&#39;s Cat</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
-        <lastBuildDate>Fri, 29 Nov 2024 10:00:00 +0000</lastBuildDate><atom:link href="https://michellellehcim.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 30 Nov 2024 10:00:00 +0000</lastBuildDate><atom:link href="https://michellellehcim.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Python基礎</title>
+        <link>https://michellellehcim.github.io/tags/python%E5%9F%BA%E7%A4%8E/</link>
+        <pubDate>Sat, 30 Nov 2024 10:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/python%E5%9F%BA%E7%A4%8E/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>可迭代物件</title>
+        <link>https://michellellehcim.github.io/tags/%E5%8F%AF%E8%BF%AD%E4%BB%A3%E7%89%A9%E4%BB%B6/</link>
+        <pubDate>Sat, 30 Nov 2024 10:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/%E5%8F%AF%E8%BF%AD%E4%BB%A3%E7%89%A9%E4%BB%B6/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>迭代器</title>
+        <link>https://michellellehcim.github.io/tags/%E8%BF%AD%E4%BB%A3%E5%99%A8/</link>
+        <pubDate>Sat, 30 Nov 2024 10:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/%E8%BF%AD%E4%BB%A3%E5%99%A8/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>迴圈</title>
+        <link>https://michellellehcim.github.io/tags/%E8%BF%B4%E5%9C%88/</link>
+        <pubDate>Sat, 30 Nov 2024 10:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/%E8%BF%B4%E5%9C%88/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>F-String</title>
         <link>https://michellellehcim.github.io/tags/f-string/</link>
         <pubDate>Fri, 29 Nov 2024 10:00:00 +0000</pubDate>
         
         <guid>https://michellellehcim.github.io/tags/f-string/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Python基礎</title>
-        <link>https://michellellehcim.github.io/tags/python%E5%9F%BA%E7%A4%8E/</link>
-        <pubDate>Fri, 29 Nov 2024 10:00:00 +0000</pubDate>
-        
-        <guid>https://michellellehcim.github.io/tags/python%E5%9F%BA%E7%A4%8E/</guid>
         <description></description>
         </item>
         <item>

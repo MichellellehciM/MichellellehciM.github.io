@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>網站開發 on Tomatos&#39;s Cat</title>
+        <link>https://michellellehcim.github.io/categories/%E7%B6%B2%E7%AB%99%E9%96%8B%E7%99%BC/</link>
+        <description>Recent content in 網站開發 on Tomatos&#39;s Cat</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <lastBuildDate>Fri, 18 Oct 2024 10:00:00 +0000</lastBuildDate><atom:link href="https://michellellehcim.github.io/categories/%E7%B6%B2%E7%AB%99%E9%96%8B%E7%99%BC/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>網站是怎麼運作的？</title>
+        <link>https://michellellehcim.github.io/p/web-work/</link>
+        <pubDate>Fri, 18 Oct 2024 10:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/p/web-work/</guid>
+        <description>&lt;img src="https://michellellehcim.github.io/p/web-work/web_work.png" alt="Featured image of post 網站是怎麼運作的？" /&gt;&lt;h1 id=&#34;-網站是怎麼運作的&#34;&gt;🌐 網站是怎麼運作的？
+&lt;/h1&gt;&lt;p&gt;你有沒有好奇過，當我們打開一個網站的時候，背後到底發生了什麼？今天，我們來聊聊網站的運作方式，以及如何建立一個購物網站的前端和後端架構。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-前端和後端誰負責什麼&#34;&gt;🖥️ 前端和後端：誰負責什麼？
+&lt;/h2&gt;&lt;p&gt;一個網站通常分為兩個主要部分：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;🎨 前端（Front-end）&lt;/strong&gt;：使用者看到的部分，包括畫面、按鈕、文字和圖片。它負責和使用者互動，內容會在瀏覽器中運行。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;🔧 後端（Back-end）&lt;/strong&gt;：藏在幕後的部分，運行在伺服器上，負責處理資料、驗證規則，並確保前端取得正確資訊。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-使用者訪問網站時發生了什麼&#34;&gt;🌍 使用者訪問網站時發生了什麼？
+&lt;/h2&gt;&lt;p&gt;假設使用者 Jenny 想逛我們的購物網站，她在瀏覽器輸入 &lt;code&gt;goodbuy.com&lt;/code&gt;，然後按下 Enter。這時：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;瀏覽器會發送一個請求，類似說：「嗨~~我想看看首頁！」&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;伺服器收到後會處理這個請求，然後回傳結果給瀏覽器。這一來一回的過程是透過 &lt;strong&gt;HTTP（🔗 Hypertext Transfer Protocol）&lt;/strong&gt; 完成的，這是一種讓瀏覽器和伺服器溝通的語言。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(註) &lt;code&gt;goodbuy.com&lt;/code&gt;是&lt;strong&gt;URL（🌐 Uniform Resource Locator）&lt;/strong&gt; 等於是網站的地址，幫助 Jenny 的瀏覽器找到伺服器。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-後端如何提供內容&#34;&gt;⚙️ 後端如何提供內容？
+&lt;/h2&gt;&lt;p&gt;當伺服器收到請求後，有兩種方式回應：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;📄 生成完整的網頁並回傳&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;伺服器會使用 &lt;strong&gt;HTML（超文本標記語言）&lt;/strong&gt; 建立完整的網頁，然後傳送給使用者。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;📊 只提供所需數據，讓前端生成頁面&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;伺服器只傳回資料（例如產品清單），由前端工具（如 React）生成畫面。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-選擇第二種方式的好處&#34;&gt;🤔 選擇第二種方式的好處:
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;減輕伺服器壓力&lt;/strong&gt;：伺服器只專注處理數據，能夠服務更多使用者。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;擴展性更好&lt;/strong&gt;：隨著用戶數量增加，伺服器的負擔也更容易管理。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;這也是為什麼現在越來越多網站使用 &lt;strong&gt;React&lt;/strong&gt;、&lt;strong&gt;Angular&lt;/strong&gt; 和 &lt;strong&gt;Vue&lt;/strong&gt; 來處理前端。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-後端的角色資料的管家&#34;&gt;🛠️ 後端的角色：資料的管家
+&lt;/h2&gt;&lt;p&gt;如果把頁面生成交給前端，那後端的主要任務就是管理數據，並提供 &lt;strong&gt;API（應用程式介面，Application Programming Interface）&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;-api-是什麼&#34;&gt;🎛️ API 是什麼？
+&lt;/h3&gt;&lt;p&gt;API 就像遙控器上的按鈕：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;每個按鈕都有特定功能，比如開關電視或調整音量。&lt;/li&gt;
+&lt;li&gt;同樣，API 是伺服器提供的「按鈕」，讓前端用來取得產品資料或提交訂單。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-用-django-建立-api&#34;&gt;🐍 用 Django 建立 API
+&lt;/h2&gt;&lt;p&gt;在後端世界裡，&lt;strong&gt;Django&lt;/strong&gt; 是一個非常受歡迎的框架，能快速幫助我們建立 API：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Django 讓處理數據和提供接口變得更簡單高效。&lt;/li&gt;
+&lt;li&gt;前端應用（例如使用 React 或 Angular 開發的網站）可以透過 API 與後端互動，完成查詢產品或提交訂單的功能。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-結論&#34;&gt;🏁 結論
+&lt;/h2&gt;&lt;p&gt;現代網站開發強調分工合作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;🎨 前端&lt;/strong&gt; 負責生成畫面，提升使用者體驗。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;🔧 後端&lt;/strong&gt; 專注處理數據和業務邏輯，提供高效的 API。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果你想建立一個高效的網站，像 Django 這樣的後端框架絕對是值得考慮的好選擇！希望這次的分享讓你對網站的運作有更清楚的了解！ 🚀&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

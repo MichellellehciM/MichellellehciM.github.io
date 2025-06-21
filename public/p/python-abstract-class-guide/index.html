@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="zh-tw" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="本篇教你從零開始理解什麼是 Python 的抽象類別（abstract class），用簡單範例幫助新手學會設計規範與繼承。">
+<title>Python OOP入門指南 (二) ：抽象</title>
+
+<link rel='canonical' href='https://michellellehcim.github.io/p/python-abstract-class-guide/'>
+
+<link rel="stylesheet" href="/scss/style.min.93d4af2d1c186db072ca308a5c7771d2406b8c1df53ac4fed42868fdfbc21aae.css"><meta property='og:title' content="Python OOP入門指南 (二) ：抽象">
+<meta property='og:description' content="本篇教你從零開始理解什麼是 Python 的抽象類別（abstract class），用簡單範例幫助新手學會設計規範與繼承。">
+<meta property='og:url' content='https://michellellehcim.github.io/p/python-abstract-class-guide/'>
+<meta property='og:site_name' content='Tomatos&#39;s Cat'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Python基礎' /><meta property='article:tag' content='OOP' /><meta property='article:tag' content='抽象類別' /><meta property='article:tag' content='abstract class' /><meta property='article:tag' content='繼承' /><meta property='article:tag' content='abc' /><meta property='article:published_time' content='2025-04-26T10:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-04-26T10:00:00&#43;00:00'/><meta property='og:image' content='https://michellellehcim.github.io/p/python-abstract-class-guide/python_abc_guide.png' />
+<meta name="twitter:title" content="Python OOP入門指南 (二) ：抽象">
+<meta name="twitter:description" content="本篇教你從零開始理解什麼是 Python 的抽象類別（abstract class），用簡單範例幫助新手學會設計規範與繼承。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://michellellehcim.github.io/p/python-abstract-class-guide/python_abc_guide.png' />
+    <link rel="shortcut icon" href="/favicon.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu12764943903786774946.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">👩🏻‍💻</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Tomatos&#39;s Cat</a></h1>
+            <h2 class="site-description">🍅🐈💻</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/MichellellehciM'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#抽象類別是什麼">抽象類別是什麼？</a>
+      <ol>
+        <li><a href="#抽象類別的三大特性">抽象類別的三大特性：</a></li>
+      </ol>
+    </li>
+    <li><a href="#為什麼要使用抽象類別">為什麼要使用抽象類別？</a></li>
+    <li><a href="#python-如何實作抽象類別">Python 如何實作抽象類別？</a></li>
+    <li><a href="#-建立抽象類別的三步驟">🛠️ 建立抽象類別的三步驟</a>
+      <ol>
+        <li><a href="#第一步匯入模組">第一步：匯入模組</a></li>
+        <li><a href="#第二步定義抽象類別與抽象方法">第二步：定義抽象類別與抽象方法</a></li>
+        <li><a href="#第三步由子類別實作抽象方法">第三步：由子類別實作抽象方法</a></li>
+      </ol>
+    </li>
+    <li><a href="#-完整範例動物叫聲系統">✅ 完整範例：動物叫聲系統</a></li>
+    <li><a href="#-常見問題-qa">💬 常見問題 Q&amp;A</a>
+      <ol>
+        <li><a href="#q1-抽象和封裝有什麼不同">Q1: 抽象和封裝有什麼不同？</a></li>
+        <li><a href="#q2一定要用-abc-嗎">Q2：一定要用 <code>ABC</code> 嗎？</a></li>
+        <li><a href="#q3如果子類別沒有實作抽象方法會怎樣">Q3：如果子類別沒有實作抽象方法會怎樣？</a></li>
+        <li><a href="#q4抽象類別可以包含普通方法嗎">Q4：抽象類別可以包含普通方法嗎？</a></li>
+        <li><a href="#q5抽象類別可以加屬性嗎">Q5：抽象類別可以加屬性嗎？</a></li>
+        <li><a href="#q6什麼時候應該使用抽象類別">Q6：什麼時候應該使用抽象類別？</a></li>
+      </ol>
+    </li>
+    <li><a href="#-延伸補充metaclass-是什麼">💡 延伸補充：metaclass 是什麼？</a></li>
+    <li><a href="#-總結記住這-3-步驟">🧾 總結：記住這 3 步驟</a></li>
+    <li><a href="#-腦力激盪">🤔 腦力激盪</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/python-abstract-class-guide/">
+                <img src="/p/python-abstract-class-guide/python_abc_guide_hu4353643792250949635.png"
+                        srcset="/p/python-abstract-class-guide/python_abc_guide_hu4353643792250949635.png 800w, /p/python-abstract-class-guide/python_abc_guide_hu8717307420239834445.png 1600w"
+                        width="800" 
+                        height="445" 
+                        loading="lazy"
+                        alt="Featured image of post Python OOP入門指南 (二) ：抽象" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/python/" >
+                Python
+            </a>
+        
+            <a href="/categories/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/" >
+                程式設計
+            </a>
+        
+            <a href="/categories/oop/" >
+                OOP
+            </a>
+        
+            <a href="/categories/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91/" >
+                物件導向
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/python-abstract-class-guide/">Python OOP入門指南 (二) ：抽象</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            本篇教你從零開始理解什麼是 Python 的抽象類別（abstract class），用簡單範例幫助新手學會設計規範與繼承。
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Apr 26, 2025</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <hr>
+<h1 id="python-抽象類別abstract-class新手教學">Python 抽象類別（Abstract Class）新手教學
+</h1><blockquote>
+<p>適合對象：Python 初學者、有 OOP 概念、想寫出更有結構的程式設計者</p>
+</blockquote>
+<hr>
+<h2 id="抽象類別是什麼">抽象類別是什麼？
+</h2><p><strong>抽象類別（Abstract Class）</strong> 是一種 <strong>無法被直接實例化</strong> 的類別，它的主要用途是作為「模板」提供一套明確的設計規範，讓子類別去實作必要的方法。</p>
+<p>✅簡單來說，抽象就是隱藏不必要的細節，保留對使用者有意義的部分。</p>
+<p>想像你在便利商店點飲料，你只會按下「冰美式」，不會去控制水溫、豆量、壓力值。咖啡機幫你包辦了背後的複雜程序，而你只需要操作「make_drink()」這個介面。</p>
+<p>✅ 抽象讓你只看見「你需要的操作」，不被內部細節干擾。</p>
+<h3 id="抽象類別的三大特性">抽象類別的三大特性：
+</h3><ul>
+<li><strong>不能直接建立實例</strong></li>
+<li><strong>包含一個或多個抽象方法</strong></li>
+<li><strong>子類別必須實作所有抽象方法才能使用</strong></li>
+</ul>
+<p>小結：</p>
+<blockquote>
+<p>抽象類別像是一份“介面契約”，強迫所有子類別遵守這份規定，避免遺漏必要功能。</p>
+</blockquote>
+<hr>
+<h2 id="為什麼要使用抽象類別">為什麼要使用抽象類別？
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>優點</th>
+          <th>說明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>統一規範</td>
+          <td>強制子類別都實作特定方法，確保一致性</td>
+      </tr>
+      <tr>
+          <td>易於擴充</td>
+          <td>子類別的功能結構清晰，不易出錯</td>
+      </tr>
+      <tr>
+          <td>避免遺漏</td>
+          <td>每位開發者知道該實作哪些方法</td>
+      </tr>
+      <tr>
+          <td>適合團隊</td>
+          <td>明確開發規範，合作更順暢</td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<h2 id="python-如何實作抽象類別">Python 如何實作抽象類別？
+</h2><p>Python 並不像 Java、C++ 內建 abstract 關鍵字，而是透過內建模組 <code>abc</code>（Abstract Base Class）來達成。</p>
+<h2 id="-建立抽象類別的三步驟">🛠️ 建立抽象類別的三步驟
+</h2><h3 id="第一步匯入模組">第一步：匯入模組
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">abc</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>ABC</code> 是內建的抽象類別基底類別</li>
+<li><code>@abstractmethod</code> 是裝飾器，用來定義抽象方法。它會標記一個方法為「抽象」，代表這個方法在父類別中不提供實作細節，而是留給子類別自行定義。</li>
+</ul>
+<blockquote>
+<p>📌 一旦類別中包含 <code>@abstractmethod</code> 方法，該類別就不能被實例化。</p>
+</blockquote>
+<hr>
+<h3 id="第二步定義抽象類別與抽象方法">第二步：定義抽象類別與抽象方法
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Animal</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>  <span class="c1"># 繼承 ABC 成為抽象類別</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@abstractmethod</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">make_sound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># 抽象方法，沒有實作內容</span>
+</span></span><span class="line"><span class="cl">        <span class="k">pass</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="第三步由子類別實作抽象方法">第三步：由子類別實作抽象方法
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">make_sound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># 必須實作父類別的抽象方法</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;汪汪！&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Cat</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">make_sound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;喵喵！&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果子類別沒有實作所有抽象方法，將無法建立該類別的實例，會拋出 TypeError。</p>
+<hr>
+<h2 id="-完整範例動物叫聲系統">✅ 完整範例：動物叫聲系統
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 抽象類別</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Animal</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@abstractmethod</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">make_sound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">pass</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">sleep</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Zzz...&#34;</span><span class="p">)</span>  <span class="c1"># 抽象類別也可有一般方法</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 子類別實作</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">make_sound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;汪汪！&#34;</span><span class="p">)</span>  <span class="c1"># ✅ 實作完成</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Cat</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">make_sound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;喵喵！&#34;</span><span class="p">)</span>  <span class="c1"># ✅ 實作完成</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># a = Animal()  # ❌ TypeError：無法建立抽象類別的實例</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">d</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">d</span><span class="o">.</span><span class="n">make_sound</span><span class="p">()</span>  <span class="c1"># 汪汪！</span>
+</span></span><span class="line"><span class="cl"><span class="n">d</span><span class="o">.</span><span class="n">sleep</span><span class="p">()</span>       <span class="c1"># Zzz...</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="-常見問題-qa">💬 常見問題 Q&amp;A
+</h2><h3 id="q1-抽象和封裝有什麼不同">Q1: 抽象和封裝有什麼不同？
+</h3><p>抽象是隱藏實作行為、只對外提供接口；封裝是保護資料不被任意存取。</p>
+<h3 id="q2一定要用-abc-嗎">Q2：一定要用 <code>ABC</code> 嗎？
+</h3><p>是的，繼承 <code>ABC</code> 或使用 <code>metaclass=ABCMeta</code> 是 Python 抽象類別的必要設定。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 另一種寫法</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Animal</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">abc</span><span class="o">.</span><span class="n">ABCMeta</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@abc.abstractmethod</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">make_sound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">pass</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="q3如果子類別沒有實作抽象方法會怎樣">Q3：如果子類別沒有實作抽象方法會怎樣？
+</h3><p>會在建立子類別實例時拋出 <code>TypeError</code>，提醒你沒有實作必要的方法。</p>
+<h3 id="q4抽象類別可以包含普通方法嗎">Q4：抽象類別可以包含普通方法嗎？
+</h3><p>可以。除了抽象方法，也可以寫一般方法，提供子類別共用的功能。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Animal</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@abstractmethod</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">make_sound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">pass</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">sleep</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Zzz...&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="q5抽象類別可以加屬性嗎">Q5：抽象類別可以加屬性嗎？
+</h3><p>可以，但建議放共用或初始化用的屬性，具體邏輯留給子類別處理。</p>
+<h3 id="q6什麼時候應該使用抽象類別">Q6：什麼時候應該使用抽象類別？
+</h3><p>當你希望每個子類別都遵守統一規則或結構（如：付款、載具、通知類別）。</p>
+<hr>
+<h2 id="-延伸補充metaclass-是什麼">💡 延伸補充：metaclass 是什麼？
+</h2><p>在 Python 中，<strong>類別也是一種物件</strong>，它的類型就是 <code>type</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Product</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">pass</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">Product</span><span class="p">))</span>  <span class="c1"># &lt;class &#39;type&#39;&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>當你使用 <code>metaclass=ABCMeta</code>，就是告訴 Python 使用一個特別的類型（MetaClass）來定義這個類別，使其具備「抽象類別」的行為。</p>
+<hr>
+<h2 id="-總結記住這-3-步驟">🧾 總結：記住這 3 步驟
+</h2><p>1️⃣ <code>from abc import ABC, abstractmethod</code>
+2️⃣ <code>class 類別名(ABC):</code>
+3️⃣ 用 <code>@abstractmethod</code> 定義抽象方法</p>
+<p>抽象類別是一種讓程式設計更有「架構」的利器，特別適合用在大型專案或多人開發時統一規格。</p>
+<hr>
+<h2 id="-腦力激盪">🤔 腦力激盪
+</h2><blockquote>
+<p>假設你正在寫一個支付模組（<code>Payment</code>），有哪些方法應該是抽象的？你會怎麼實作 <code>CreditCard</code>、<code>LinePay</code>、<code>街口支付</code> 等子類別？</p>
+<p>歡迎在留言區分享你的想法，一起討論、成長！</p>
+</blockquote>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/python%E5%9F%BA%E7%A4%8E/">Python基礎</a>
+        
+            <a href="/tags/oop/">OOP</a>
+        
+            <a href="/tags/%E6%8A%BD%E8%B1%A1%E9%A1%9E%E5%88%A5/">抽象類別</a>
+        
+            <a href="/tags/abstract-class/">Abstract Class</a>
+        
+            <a href="/tags/%E7%B9%BC%E6%89%BF/">繼承</a>
+        
+            <a href="/tags/abc/">Abc</a>
+        
+    </section>
+
+
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            Last updated on Apr 26, 2025 10:00 UTC
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/python-polymorphism-guide/">
+        
+        
+            <div class="article-image">
+                <img src="/p/python-polymorphism-guide/python_polymorphism_guide.0244d23d89858032c59029018ae09279_hu4577286421694334425.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Python OOP入門指南 (四) ：多型"
+                        data-key="python-polymorphism-guide" 
+                        data-hash="md5-AkTSPYmFgDLFkCkBiuCSeQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Python OOP入門指南 (四) ：多型</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/python-encapsulation-guide/">
+        
+        
+            <div class="article-image">
+                <img src="/p/python-encapsulation-guide/python_encapsulation.56b812e800a08a6905deb032faf06726_hu9693738819989330444.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Python OOP入門指南 (三) ：封裝"
+                        data-key="python-encapsulation-guide" 
+                        data-hash="md5-VrgS6ACgimkF3rAy&#43;vBnJg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Python OOP入門指南 (三) ：封裝</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/python-inheritance-guide/">
+        
+        
+            <div class="article-image">
+                <img src="/p/python-inheritance-guide/python_inheritance.7642ec5d10e2d743cc7bab1b2d97702e_hu11415079908607209177.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Python OOP入門指南 (一) ：繼承"
+                        data-key="python-inheritance-guide" 
+                        data-hash="md5-dkLsXRDi10PMe6sbLZdwLg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Python OOP入門指南 (一) ：繼承</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/python-staticmethod-guide/">
+        
+        
+            <div class="article-image">
+                <img src="/p/python-staticmethod-guide/python_staticmethod_guide.0c93a89ef5d27a4adddade10d8c499c9_hu10526605203960798519.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Python 靜態方法（@staticmethod）新手教學：什麼時候該用？"
+                        data-key="python-staticmethod-guide" 
+                        data-hash="md5-DJOonvXSekrd2t4Q2MSZyQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Python 靜態方法（@staticmethod）新手教學：什麼時候該用？</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/python-iterator/">
+        
+        
+            <div class="article-image">
+                <img src="/p/python-iterator/python_iterator.d4b1cbf08be331437fbff9b20d4bf3d7_hu18323931027324967258.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Python 可迭代 (Iteratable) 與 迭代器 (Iterator) 入門"
+                        data-key="python-iterator" 
+                        data-hash="md5-1LHL8IvjMUN/v/myDUvz1w==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Python 可迭代 (Iteratable) 與 迭代器 (Iterator) 入門</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "michelle-theme" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2025 Tomatos&#39;s Cat
+    </section>
+    
+    <section class="powerby">
+        
+            2025 Michelle's Blog. All rights reserved <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

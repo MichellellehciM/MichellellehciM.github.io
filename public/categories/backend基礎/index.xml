@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Backend基礎 on Tomatos&#39;s Cat</title>
+        <link>https://michellellehcim.github.io/categories/backend%E5%9F%BA%E7%A4%8E/</link>
+        <description>Recent content in Backend基礎 on Tomatos&#39;s Cat</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <lastBuildDate>Fri, 20 Jun 2025 10:00:00 +0800</lastBuildDate><atom:link href="https://michellellehcim.github.io/categories/backend%E5%9F%BA%E7%A4%8E/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>什麼是 API、REST、RESTful API？一次搞懂概念與實作原則</title>
+        <link>https://michellellehcim.github.io/p/what-is-restful-api/</link>
+        <pubDate>Fri, 20 Jun 2025 10:00:00 +0800</pubDate>
+        
+        <guid>https://michellellehcim.github.io/p/what-is-restful-api/</guid>
+        <description>&lt;img src="https://michellellehcim.github.io/p/what-is-restful-api/restful_api_guide.png" alt="Featured image of post 什麼是 API、REST、RESTful API？一次搞懂概念與實作原則" /&gt;&lt;h1 id=&#34;-一篇文章搞懂什麼是-apirestrestful-api-&#34;&gt;🌐 一篇文章搞懂什麼是 API、REST、RESTful API !
+&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;搞懂前後端怎麼溝通、什麼是 REST、為什麼大家都在說 RESTful API？這篇文章用白話解釋通通告訴你！&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-目錄&#34;&gt;📌 目錄
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e4%bb%80%e9%ba%bc%e6%98%af-api&#34; &gt;什麼是 API？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e4%bb%80%e9%ba%bc%e6%98%af-rest&#34; &gt;什麼是 REST？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e4%bb%80%e9%ba%bc%e6%98%af-restful-api&#34; &gt;什麼是 RESTful API？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#http-%e6%96%b9%e6%b3%95%e8%88%87-rest-api-%e5%b0%8d%e6%87%89%e8%a1%a8&#34; &gt;HTTP 方法與 REST API 對應表&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#rest-%e7%9a%84%e6%a0%b8%e5%bf%83%e8%a8%ad%e8%a8%88%e5%8e%9f%e5%89%87%e7%b0%a1%e5%8c%96%e7%89%88&#34; &gt;REST 的核心設計原則（簡化版）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#django-rest-api-%e5%b0%8d%e7%85%a7%e7%af%84%e4%be%8b&#34; &gt;Django REST API 對照範例&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e6%96%b0%e6%89%8b%e5%b8%b8%e8%a6%8b%e5%95%8f%e9%a1%8c-qa&#34; &gt;新手常見問題 Q&amp;amp;A&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e7%b8%bd%e7%b5%90&#34; &gt;總結&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;什麼是-api&#34;&gt;什麼是 API？
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;API（Application Programming Interface）&lt;/strong&gt; 中文是「應用程式介面」，是應用程式之間「溝通的橋樑」。&lt;/p&gt;
+&lt;p&gt;📦 比喻：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;你 = 使用者（前端）&lt;/li&gt;
+&lt;li&gt;店員 = API&lt;/li&gt;
+&lt;li&gt;廚房 = 後端邏輯/資料庫&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;你只需要點餐（呼叫 API），店員會幫你處理後台的事情，然後回你食物（資料）！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;API 不等於 REST，&lt;strong&gt;REST 是一種設計 API 的風格&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;什麼是-rest&#34;&gt;什麼是 REST？
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;REST（REpresentational State Transfer）&lt;/strong&gt; 是一種設計 API 的「規範」與「風格」，鼓勵使用「HTTP 方法 + 有語意的資源路徑（URL）」來操作資料。&lt;/p&gt;
+&lt;p&gt;REST 的資源設計非常直覺，例如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/users/&lt;/code&gt; 表示所有使用者&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/users/1/&lt;/code&gt; 表示 ID=1 的使用者&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/posts/5/comments/&lt;/code&gt; 表示第 5 篇貼文的留言&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;什麼是-restful-api&#34;&gt;什麼是 RESTful API？
+&lt;/h2&gt;&lt;p&gt;當你設計的 API 遵循 REST 的風格，就可以稱它為 &lt;strong&gt;RESTful API&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;特徵&#34;&gt;特徵：
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;路徑是「名詞」不是「動詞」
+✅ &lt;code&gt;/users/1/&lt;/code&gt;（好）
+❌ &lt;code&gt;/getUserById?id=1&lt;/code&gt;（壞）&lt;/li&gt;
+&lt;li&gt;行為交給 HTTP 方法（GET、POST、PUT、DELETE）&lt;/li&gt;
+&lt;li&gt;每次請求都是獨立的（Stateless）&lt;/li&gt;
+&lt;li&gt;回傳 JSON 格式資料（通常）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;http-方法與-rest-api-對應表&#34;&gt;HTTP 方法與 REST API 對應表
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+          &lt;th&gt;HTTP 方法&lt;/th&gt;
+          &lt;th&gt;路徑範例&lt;/th&gt;
+          &lt;th&gt;操作說明&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;查詢全部&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;GET&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;/api/users/&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;查詢所有使用者&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;查詢單筆&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;GET&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;/api/users/1/&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;查詢 ID=1 的使用者&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;新增資料&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;POST&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;/api/users/&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;建立新使用者&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;完整更新&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;PUT&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;/api/users/1/&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;完全覆蓋使用者資料&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;局部更新&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;PATCH&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;/api/users/1/&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;只更新部分欄位&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;刪除資料&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;DELETE&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;/api/users/1/&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;刪除該使用者&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;rest-的核心設計原則簡化版&#34;&gt;REST 的核心設計原則簡化版
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;原則名稱&lt;/th&gt;
+          &lt;th&gt;白話說明&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Client-Server&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;前後端分離，分工明確&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Stateless&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;每次請求都自帶資料，伺服器不會記住你&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Cacheable&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;可以快取的 API 要能標示出來&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Uniform Interface&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;使用統一的 URL + 方法設計資源（核心）&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Layered System&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;前端不需知道後端架構幾層&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Code on Demand&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;可選：伺服器可以傳 JS 給前端執行（較少用）&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;django-rest-api-對照範例&#34;&gt;Django REST API 對照範例
+&lt;/h2&gt;&lt;h3 id=&#34;-傳統-django-表單方式&#34;&gt;✅ 傳統 Django 表單方式
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@require_POST&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;create_user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;form&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;UserForm&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;POST&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;form&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;is_valid&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;form&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;save&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;redirect&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;users:index&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;-restful-api使用-django-rest-framework&#34;&gt;✅ RESTful API（使用 Django REST Framework）
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@api_view&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;POST&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;create_user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;serializer&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;UserSerializer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;serializer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;is_valid&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;serializer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;save&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Response&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;serializer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;status&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;201&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;新手常見問題-qa&#34;&gt;新手常見問題 Q&amp;amp;A
+&lt;/h2&gt;&lt;h3 id=&#34;q1restful-api-一定要用-json-嗎&#34;&gt;Q1：RESTful API 一定要用 JSON 嗎？
+&lt;/h3&gt;&lt;p&gt;不是一定要，但 JSON 是最常見、跨平台友善、前端也好處理的格式。&lt;/p&gt;
+&lt;h3 id=&#34;q2rest-是一種技術嗎&#34;&gt;Q2：REST 是一種技術嗎？
+&lt;/h3&gt;&lt;p&gt;不是，它是 API 的設計「風格」，不是一種程式語言或框架。&lt;/p&gt;
+&lt;h3 id=&#34;q3http-是-rest-的一部分嗎&#34;&gt;Q3：HTTP 是 REST 的一部分嗎？
+&lt;/h3&gt;&lt;p&gt;不是從屬關係，REST 通常是用 HTTP 實作而成。&lt;/p&gt;
+&lt;h3 id=&#34;q4restful-api-的命名方式有什麼好處&#34;&gt;Q4：RESTful API 的命名方式有什麼好處？
+&lt;/h3&gt;&lt;p&gt;使用資源導向的 URL（如 &lt;code&gt;/users/1/&lt;/code&gt;）搭配 HTTP 方法，可以讓 API 結構一致、語意清楚，利於維護與團隊溝通，也方便前端或第三方串接理解行為。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;總結&#34;&gt;總結
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;名詞&lt;/th&gt;
+          &lt;th&gt;定義&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;API&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;應用程式之間的溝通橋樑&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;REST&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;設計 API 的風格與原則&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;RESTful API&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;遵循 REST 原則設計的 API&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;HTTP 方法&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;操作 API 所用的語法（如 GET、POST）&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;✅ RESTful API 是現代前後端溝通的基礎，理解它的資源導向思維與 HTTP 方法設計，會讓你開發更清晰、架構更漂亮！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-互動問題你學會了嗎&#34;&gt;💬 互動問題：你學會了嗎？
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;你覺得哪一個 URL 設計比較符合 REST 原則？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A. &lt;code&gt;/getUserById?id=3&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;B. &lt;code&gt;/users/3/&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果要刪除 ID 為 10 的留言，你會：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A. 用 &lt;code&gt;POST /deleteComment/10&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;B. 用 &lt;code&gt;DELETE /comments/10/&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;歡迎留言你的答案，讓我們一起練習！&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

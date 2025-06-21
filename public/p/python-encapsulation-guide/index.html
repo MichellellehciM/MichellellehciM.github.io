@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="zh-tw" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="初學 Python 的 OOP 概念看不懂？這篇文章用實際生活例子，幫你搞懂什麼是封裝（Encapsulation）以及為什麼這麼重要。">
+<title>Python OOP入門指南 (三) ：封裝</title>
+
+<link rel='canonical' href='https://michellellehcim.github.io/p/python-encapsulation-guide/'>
+
+<link rel="stylesheet" href="/scss/style.min.93d4af2d1c186db072ca308a5c7771d2406b8c1df53ac4fed42868fdfbc21aae.css"><meta property='og:title' content="Python OOP入門指南 (三) ：封裝">
+<meta property='og:description' content="初學 Python 的 OOP 概念看不懂？這篇文章用實際生活例子，幫你搞懂什麼是封裝（Encapsulation）以及為什麼這麼重要。">
+<meta property='og:url' content='https://michellellehcim.github.io/p/python-encapsulation-guide/'>
+<meta property='og:site_name' content='Tomatos&#39;s Cat'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Python基礎' /><meta property='article:tag' content='OOP' /><meta property='article:tag' content='class' /><meta property='article:tag' content='封裝 encapsulation' /><meta property='article:tag' content='資料保護' /><meta property='article:published_time' content='2025-04-27T14:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-04-27T14:00:00&#43;00:00'/><meta property='og:image' content='https://michellellehcim.github.io/p/python-encapsulation-guide/python_encapsulation.png' />
+<meta name="twitter:title" content="Python OOP入門指南 (三) ：封裝">
+<meta name="twitter:description" content="初學 Python 的 OOP 概念看不懂？這篇文章用實際生活例子，幫你搞懂什麼是封裝（Encapsulation）以及為什麼這麼重要。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://michellellehcim.github.io/p/python-encapsulation-guide/python_encapsulation.png' />
+    <link rel="shortcut icon" href="/favicon.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu12764943903786774946.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">👩🏻‍💻</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Tomatos&#39;s Cat</a></h1>
+            <h2 class="site-description">🍅🐈💻</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/MichellellehciM'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#什麼是封裝encapsulation">什麼是封裝（Encapsulation）？</a></li>
+    <li><a href="#基本語法範例">基本語法範例</a></li>
+    <li><a href="#為什麼要封裝">為什麼要封裝？</a></li>
+    <li><a href="#實際例子提款卡操作帳戶">實際例子：提款卡操作帳戶</a></li>
+    <li><a href="#-__balance-為什麼不能直接改">🛡️ <code>__balance</code> 為什麼不能直接改？</a></li>
+    <li><a href="#-延伸技巧用-getter-和-setter-控制屬性">✨ 延伸技巧：用 Getter 和 Setter 控制屬性</a>
+      <ol>
+        <li><a href="#-getter-是什麼">🔹 Getter 是什麼？</a></li>
+        <li><a href="#-setter-是什麼">🔹 Setter 是什麼？</a></li>
+        <li><a href="#範例加上註解的版本">範例：加上註解的版本</a></li>
+        <li><a href="#-那什麼是-property為什麼要用它">🔍 那什麼是 <code>@property</code>？為什麼要用它？</a></li>
+      </ol>
+    </li>
+    <li><a href="#初學者常見問題-qa">❓初學者常見問題 Q&amp;A</a>
+      <ol>
+        <li><a href="#q1-雙底線-__-是絕對私有嗎">Q1: 雙底線 <code>__</code> 是絕對私有嗎？</a></li>
+        <li><a href="#q2-一定要封裝嗎">Q2: 一定要封裝嗎？</a></li>
+        <li><a href="#q3-為什麼不用直接讓-balance-變成-public">Q3: 為什麼不用直接讓 balance 變成 public？</a></li>
+      </ol>
+    </li>
+    <li><a href="#-腦力激盪">🤔 腦力激盪</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/python-encapsulation-guide/">
+                <img src="/p/python-encapsulation-guide/python_encapsulation_hu2845608284825255655.png"
+                        srcset="/p/python-encapsulation-guide/python_encapsulation_hu2845608284825255655.png 800w, /p/python-encapsulation-guide/python_encapsulation_hu1426976892037790652.png 1600w"
+                        width="800" 
+                        height="446" 
+                        loading="lazy"
+                        alt="Featured image of post Python OOP入門指南 (三) ：封裝" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/python/" >
+                Python
+            </a>
+        
+            <a href="/categories/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/" >
+                程式設計
+            </a>
+        
+            <a href="/categories/oop/" >
+                OOP
+            </a>
+        
+            <a href="/categories/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91/" >
+                物件導向
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/python-encapsulation-guide/">Python OOP入門指南 (三) ：封裝</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            初學 Python 的 OOP 概念看不懂？這篇文章用實際生活例子，幫你搞懂什麼是封裝（Encapsulation）以及為什麼這麼重要。
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Apr 27, 2025</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="python-封裝入門指南用生活例子理解物件導向">Python 封裝入門指南：用生活例子理解物件導向
+</h1><p>你可能已經聽過「封裝」這個詞，但到底它是什麼意思？在 Python 中又怎麼使用？</p>
+<p>別擔心，這篇文章會用「提款卡與銀行帳戶」這個生活例子，帶你一步步搞懂什麼是 <strong>封裝（Encapsulation）</strong>，為什麼它對寫程式這麼重要。</p>
+<hr>
+<h2 id="什麼是封裝encapsulation">什麼是封裝（Encapsulation）？
+</h2><p>封裝指的是「<strong>將資料與操作資料的方法包在一起</strong>」，並且<strong>保護內部資料不被隨便改動</strong>。</p>
+<p>就像銀行帳戶裡的錢，不能讓別人隨便改動，必須透過提款卡來操作，而不能直接把存款變數改成 999999。</p>
+<p>你可能會想問：<strong>「封裝就是在變數前加上 <code>__</code> 嗎？」</strong></p>
+<p>✅ 加上 <code>__</code>（雙底線）是 Python 中<strong>實現封裝的一種方式</strong>，它會讓變數變成「私有」，不能直接從外部存取。</p>
+<p>❗️但<strong>封裝的核心不是語法，而是觀念</strong>：<strong>保護內部資料，讓它只能透過特定方法安全地操作。</strong></p>
+<p>舉例來說，一個帳戶不該讓人直接把餘額改成 999999，而應該透過存款、提款等方法來處理，這樣資料才安全、邏輯才正確。</p>
+<p>就像銀行帳戶裡的錢，不能讓別人隨便改動，必須透過提款卡來操作，而不能直接把存款變數改成 999999。</p>
+<hr>
+<h2 id="基本語法範例">基本語法範例
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">BankAccount</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">owner</span><span class="p">,</span> <span class="n">balance</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">owner</span> <span class="o">=</span> <span class="n">owner</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">__balance</span> <span class="o">=</span> <span class="n">balance</span>  <span class="c1"># 前面加 __ 表示這是私有屬性</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">deposit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">amount</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">__balance</span> <span class="o">+=</span> <span class="n">amount</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">withdraw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">amount</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__balance</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">__balance</span> <span class="o">-=</span> <span class="n">amount</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">get_balance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__balance</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="為什麼要封裝">為什麼要封裝？
+</h2><ol>
+<li>✅ <strong>保護資料</strong>：防止別人直接改變帳戶餘額等關鍵資訊。</li>
+<li>✅ <strong>控制權限</strong>：可以用方法來設限制（例如：不能存負錢、不能領超過餘額）。</li>
+<li>✅ <strong>維護性高</strong>：內部實作可變動，只要方法介面不變，用戶不需要改程式。</li>
+</ol>
+<hr>
+<h2 id="實際例子提款卡操作帳戶">實際例子：提款卡操作帳戶
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">account</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="s2">&#34;小明&#34;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">account</span><span class="o">.</span><span class="n">deposit</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">account</span><span class="o">.</span><span class="n">get_balance</span><span class="p">())</span>  <span class="c1"># 1500</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">account</span><span class="o">.</span><span class="n">withdraw</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">account</span><span class="o">.</span><span class="n">get_balance</span><span class="p">())</span>  <span class="c1"># 1300</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># account.__balance = 999999  # ❌ 這樣不會真的改到餘額（因為它是私有屬性）</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="-__balance-為什麼不能直接改">🛡️ <code>__balance</code> 為什麼不能直接改？
+</h2><p>Python 中 <strong>雙底線開頭（如 <code>__balance</code>）代表私有屬性</strong>，它不能被直接從外部存取：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">account</span><span class="o">.</span><span class="n">__balance</span><span class="p">)</span>  <span class="c1"># ❌ AttributeError</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>這就是封裝的核心：<strong>重要的內部狀態應該只能透過方法（如 deposit / withdraw）間接操作</strong>。</p>
+<blockquote>
+<p>這樣才能確保帳戶的正確性與安全性。</p>
+</blockquote>
+<hr>
+<h2 id="-延伸技巧用-getter-和-setter-控制屬性">✨ 延伸技巧：用 Getter 和 Setter 控制屬性
+</h2><p>你可能會想：既然 <code>__balance</code> 是私有的，那我就不能取得或改它了嗎？其實可以，透過 <code>Getter</code> 和 <code>Setter</code>。</p>
+<h3 id="-getter-是什麼">🔹 Getter 是什麼？
+</h3><p>用來<strong>讀取私有屬性</strong>的方法。搭配 <code>@property</code> 裝飾器，讓使用者「看起來像直接讀取變數」，其實是透過方法取得值。</p>
+<h3 id="-setter-是什麼">🔹 Setter 是什麼？
+</h3><p>用來<strong>修改私有屬性</strong>的方法。搭配 <code>@變數.setter</code>，可以加入條件判斷，保證值的正確性。</p>
+<h3 id="範例加上註解的版本">範例：加上註解的版本
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">BankAccount</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">owner</span><span class="p">,</span> <span class="n">balance</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">owner</span> <span class="o">=</span> <span class="n">owner</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">__balance</span> <span class="o">=</span> <span class="n">balance</span>  <span class="c1"># 將餘額設為私有屬性</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@property</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">balance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># Getter：取得餘額</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__balance</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@balance.setter</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">balance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>  <span class="c1"># Setter：設定餘額時檢查是否合理</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">__balance</span> <span class="o">=</span> <span class="n">value</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;餘額不能是負數！&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">account</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="s2">&#34;小美&#34;</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">account</span><span class="o">.</span><span class="n">balance</span><span class="p">)</span>  <span class="c1"># ✅ 正常取得餘額（500）</span>
+</span></span><span class="line"><span class="cl"><span class="n">account</span><span class="o">.</span><span class="n">balance</span> <span class="o">=</span> <span class="mi">800</span>    <span class="c1"># ✅ 設定新餘額（800）</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">account</span><span class="o">.</span><span class="n">balance</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">account</span><span class="o">.</span><span class="n">balance</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>   <span class="c1"># ❌ 嘗試設負數，會被拒絕</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="-那什麼是-property為什麼要用它">🔍 那什麼是 <code>@property</code>？為什麼要用它？
+</h3><p>有時候，我們<strong>想讓使用者像操作變數一樣簡單，但又希望在背後加上邏輯限制或驗證條件</strong>，這時 <code>@property</code> 就派上用場了。</p>
+<p>它的用途：</p>
+<ul>
+<li>✅ 讓一個方法看起來像是屬性（不需要加括號）</li>
+<li>✅ 讓我們可以<strong>控制讀取與設定資料的行為</strong>（搭配 <code>@setter</code>）</li>
+</ul>
+<p>簡單來說：<strong><code>@property</code> 就是把「方法」包裝成「變數」的外皮，讓存取更自然，但邏輯更安全。</strong></p>
+<p>你可以這樣理解：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">value</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">balance</span>  <span class="c1"># 看起來像讀取變數</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj</span><span class="o">.</span><span class="n">balance</span> <span class="o">=</span> <span class="mi">1000</span>    <span class="c1"># 看起來像設變數</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>但其實這背後跑的是 <code>balance()</code> 方法和 <code>balance.setter()</code> 方法。</p>
+<hr>
+<p>如果你想開放存取但又希望加點邏輯控制，可以使用 <code>property</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">BankAccount</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">owner</span><span class="p">,</span> <span class="n">balance</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">owner</span> <span class="o">=</span> <span class="n">owner</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">__balance</span> <span class="o">=</span> <span class="n">balance</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@property</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">balance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__balance</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@balance.setter</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">balance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">__balance</span> <span class="o">=</span> <span class="n">value</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">account</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="s2">&#34;小美&#34;</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">account</span><span class="o">.</span><span class="n">balance</span><span class="p">)</span>  <span class="c1"># 500</span>
+</span></span><span class="line"><span class="cl"><span class="n">account</span><span class="o">.</span><span class="n">balance</span> <span class="o">=</span> <span class="mi">800</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">account</span><span class="o">.</span><span class="n">balance</span><span class="p">)</span>  <span class="c1"># 800</span>
+</span></span><span class="line"><span class="cl"><span class="n">account</span><span class="o">.</span><span class="n">balance</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>  <span class="c1"># ❌ 無效（不會改變）</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="初學者常見問題-qa">❓初學者常見問題 Q&amp;A
+</h2><h3 id="q1-雙底線-__-是絕對私有嗎">Q1: 雙底線 <code>__</code> 是絕對私有嗎？
+</h3><p><strong>A:</strong> 不是。它其實是「名稱改寫（name mangling）」，變成 <code>_類別名__變數名</code>。但<strong>我們應該把它當作私有屬性來使用</strong>。</p>
+<h3 id="q2-一定要封裝嗎">Q2: 一定要封裝嗎？
+</h3><p><strong>A:</strong> 當資料是關鍵、敏感或容易錯誤時，<strong>封裝就非常重要</strong>。它是寫好程式、好維護程式的基礎。</p>
+<h3 id="q3-為什麼不用直接讓-balance-變成-public">Q3: 為什麼不用直接讓 balance 變成 public？
+</h3><p><strong>A:</strong> 若沒有封裝，任何地方都能亂設餘額成 -999、999999，不安全也不易除錯。</p>
+<hr>
+<h2 id="-腦力激盪">🤔 腦力激盪
+</h2><blockquote>
+<p>假設你有一個 <code>Student</code> 類別，裡面有成績 <code>score</code> 屬性，你會不會想用封裝來保護它？為什麼？歡迎留言告訴我你的想法！</p>
+</blockquote>
+<hr>
+<p>感謝閱讀這篇封裝入門指南，記得：寫程式不只是能動就好，<strong>安全性與結構也很重要</strong> 💡</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/python%E5%9F%BA%E7%A4%8E/">Python基礎</a>
+        
+            <a href="/tags/oop/">OOP</a>
+        
+            <a href="/tags/class/">Class</a>
+        
+            <a href="/tags/%E5%B0%81%E8%A3%9D-encapsulation/">封裝 Encapsulation</a>
+        
+            <a href="/tags/%E8%B3%87%E6%96%99%E4%BF%9D%E8%AD%B7/">資料保護</a>
+        
+    </section>
+
+
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            Last updated on Apr 27, 2025 14:00 UTC
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/python-inheritance-guide/">
+        
+        
+            <div class="article-image">
+                <img src="/p/python-inheritance-guide/python_inheritance.7642ec5d10e2d743cc7bab1b2d97702e_hu11415079908607209177.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Python OOP入門指南 (一) ：繼承"
+                        data-key="python-inheritance-guide" 
+                        data-hash="md5-dkLsXRDi10PMe6sbLZdwLg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Python OOP入門指南 (一) ：繼承</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/python-polymorphism-guide/">
+        
+        
+            <div class="article-image">
+                <img src="/p/python-polymorphism-guide/python_polymorphism_guide.0244d23d89858032c59029018ae09279_hu4577286421694334425.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Python OOP入門指南 (四) ：多型"
+                        data-key="python-polymorphism-guide" 
+                        data-hash="md5-AkTSPYmFgDLFkCkBiuCSeQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Python OOP入門指南 (四) ：多型</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/python-abstract-class-guide/">
+        
+        
+            <div class="article-image">
+                <img src="/p/python-abstract-class-guide/python_abc_guide.ec890f42f5c2a2303b83d5588d598a95_hu3396738684149395731.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Python OOP入門指南 (二) ：抽象"
+                        data-key="python-abstract-class-guide" 
+                        data-hash="md5-7IkPQvXCojA7g9VYjVmKlQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Python OOP入門指南 (二) ：抽象</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/python-staticmethod-guide/">
+        
+        
+            <div class="article-image">
+                <img src="/p/python-staticmethod-guide/python_staticmethod_guide.0c93a89ef5d27a4adddade10d8c499c9_hu10526605203960798519.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Python 靜態方法（@staticmethod）新手教學：什麼時候該用？"
+                        data-key="python-staticmethod-guide" 
+                        data-hash="md5-DJOonvXSekrd2t4Q2MSZyQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Python 靜態方法（@staticmethod）新手教學：什麼時候該用？</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/python-iterator/">
+        
+        
+            <div class="article-image">
+                <img src="/p/python-iterator/python_iterator.d4b1cbf08be331437fbff9b20d4bf3d7_hu18323931027324967258.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Python 可迭代 (Iteratable) 與 迭代器 (Iterator) 入門"
+                        data-key="python-iterator" 
+                        data-hash="md5-1LHL8IvjMUN/v/myDUvz1w==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Python 可迭代 (Iteratable) 與 迭代器 (Iterator) 入門</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "michelle-theme" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2025 Tomatos&#39;s Cat
+    </section>
+    
+    <section class="powerby">
+        
+            2025 Michelle's Blog. All rights reserved <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

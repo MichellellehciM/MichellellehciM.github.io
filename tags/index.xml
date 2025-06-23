@@ -6,12 +6,164 @@
         <description>Recent content in Tags on Tomatos&#39;s Cat</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
-        <lastBuildDate>Sat, 30 Nov 2024 10:00:00 +0000</lastBuildDate><atom:link href="https://michellellehcim.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 20 Jun 2025 10:00:00 +0800</lastBuildDate><atom:link href="https://michellellehcim.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>API基礎</title>
+        <link>https://michellellehcim.github.io/tags/api%E5%9F%BA%E7%A4%8E/</link>
+        <pubDate>Fri, 20 Jun 2025 10:00:00 +0800</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/api%E5%9F%BA%E7%A4%8E/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Django REST Framework</title>
+        <link>https://michellellehcim.github.io/tags/django-rest-framework/</link>
+        <pubDate>Fri, 20 Jun 2025 10:00:00 +0800</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/django-rest-framework/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>HTTP</title>
+        <link>https://michellellehcim.github.io/tags/http/</link>
+        <pubDate>Fri, 20 Jun 2025 10:00:00 +0800</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/http/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>RESTful</title>
+        <link>https://michellellehcim.github.io/tags/restful/</link>
+        <pubDate>Fri, 20 Jun 2025 10:00:00 +0800</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/restful/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>前後端溝通</title>
+        <link>https://michellellehcim.github.io/tags/%E5%89%8D%E5%BE%8C%E7%AB%AF%E6%BA%9D%E9%80%9A/</link>
+        <pubDate>Fri, 20 Jun 2025 10:00:00 +0800</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/%E5%89%8D%E5%BE%8C%E7%AB%AF%E6%BA%9D%E9%80%9A/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>OOP</title>
+        <link>https://michellellehcim.github.io/tags/oop/</link>
+        <pubDate>Tue, 27 May 2025 10:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/oop/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Polymorphism</title>
+        <link>https://michellellehcim.github.io/tags/polymorphism/</link>
+        <pubDate>Tue, 27 May 2025 10:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/polymorphism/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Python基礎</title>
         <link>https://michellellehcim.github.io/tags/python%E5%9F%BA%E7%A4%8E/</link>
-        <pubDate>Sat, 30 Nov 2024 10:00:00 +0000</pubDate>
+        <pubDate>Tue, 27 May 2025 10:00:00 +0000</pubDate>
         
         <guid>https://michellellehcim.github.io/tags/python%E5%9F%BA%E7%A4%8E/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>多型</title>
+        <link>https://michellellehcim.github.io/tags/%E5%A4%9A%E5%9E%8B/</link>
+        <pubDate>Tue, 27 May 2025 10:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/%E5%A4%9A%E5%9E%8B/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>繼承</title>
+        <link>https://michellellehcim.github.io/tags/%E7%B9%BC%E6%89%BF/</link>
+        <pubDate>Tue, 27 May 2025 10:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/%E7%B9%BC%E6%89%BF/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Abc</title>
+        <link>https://michellellehcim.github.io/tags/abc/</link>
+        <pubDate>Mon, 26 May 2025 10:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/abc/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Abstract Class</title>
+        <link>https://michellellehcim.github.io/tags/abstract-class/</link>
+        <pubDate>Mon, 26 May 2025 10:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/abstract-class/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>抽象類別</title>
+        <link>https://michellellehcim.github.io/tags/%E6%8A%BD%E8%B1%A1%E9%A1%9E%E5%88%A5/</link>
+        <pubDate>Mon, 26 May 2025 10:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/%E6%8A%BD%E8%B1%A1%E9%A1%9E%E5%88%A5/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Class</title>
+        <link>https://michellellehcim.github.io/tags/class/</link>
+        <pubDate>Sun, 25 May 2025 14:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/class/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>封裝 Encapsulation</title>
+        <link>https://michellellehcim.github.io/tags/%E5%B0%81%E8%A3%9D-encapsulation/</link>
+        <pubDate>Sun, 25 May 2025 14:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/%E5%B0%81%E8%A3%9D-encapsulation/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>資料保護</title>
+        <link>https://michellellehcim.github.io/tags/%E8%B3%87%E6%96%99%E4%BF%9D%E8%AD%B7/</link>
+        <pubDate>Sun, 25 May 2025 14:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/%E8%B3%87%E6%96%99%E4%BF%9D%E8%AD%B7/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Super</title>
+        <link>https://michellellehcim.github.io/tags/super/</link>
+        <pubDate>Sun, 25 May 2025 11:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/super/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>繼承 Inheritance</title>
+        <link>https://michellellehcim.github.io/tags/%E7%B9%BC%E6%89%BF-inheritance/</link>
+        <pubDate>Sun, 25 May 2025 11:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/%E7%B9%BC%E6%89%BF-inheritance/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Staticmethod</title>
+        <link>https://michellellehcim.github.io/tags/staticmethod/</link>
+        <pubDate>Thu, 01 May 2025 10:00:00 +0800</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/staticmethod/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>類別與物件</title>
+        <link>https://michellellehcim.github.io/tags/%E9%A1%9E%E5%88%A5%E8%88%87%E7%89%A9%E4%BB%B6/</link>
+        <pubDate>Thu, 01 May 2025 10:00:00 +0800</pubDate>
+        
+        <guid>https://michellellehcim.github.io/tags/%E9%A1%9E%E5%88%A5%E8%88%87%E7%89%A9%E4%BB%B6/</guid>
         <description></description>
         </item>
         <item>
@@ -92,70 +244,6 @@
         <pubDate>Thu, 28 Nov 2024 10:00:00 +0000</pubDate>
         
         <guid>https://michellellehcim.github.io/tags/%E8%A8%BB%E8%A7%A3/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Abc</title>
-        <link>https://michellellehcim.github.io/tags/abc/</link>
-        <pubDate>Tue, 26 Nov 2024 10:00:00 +0000</pubDate>
-        
-        <guid>https://michellellehcim.github.io/tags/abc/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Abstract Class</title>
-        <link>https://michellellehcim.github.io/tags/abstract-class/</link>
-        <pubDate>Tue, 26 Nov 2024 10:00:00 +0000</pubDate>
-        
-        <guid>https://michellellehcim.github.io/tags/abstract-class/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>OOP</title>
-        <link>https://michellellehcim.github.io/tags/oop/</link>
-        <pubDate>Tue, 26 Nov 2024 10:00:00 +0000</pubDate>
-        
-        <guid>https://michellellehcim.github.io/tags/oop/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>抽象類別</title>
-        <link>https://michellellehcim.github.io/tags/%E6%8A%BD%E8%B1%A1%E9%A1%9E%E5%88%A5/</link>
-        <pubDate>Tue, 26 Nov 2024 10:00:00 +0000</pubDate>
-        
-        <guid>https://michellellehcim.github.io/tags/%E6%8A%BD%E8%B1%A1%E9%A1%9E%E5%88%A5/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>繼承</title>
-        <link>https://michellellehcim.github.io/tags/%E7%B9%BC%E6%89%BF/</link>
-        <pubDate>Tue, 26 Nov 2024 10:00:00 +0000</pubDate>
-        
-        <guid>https://michellellehcim.github.io/tags/%E7%B9%BC%E6%89%BF/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Class</title>
-        <link>https://michellellehcim.github.io/tags/class/</link>
-        <pubDate>Mon, 25 Nov 2024 11:00:00 +0000</pubDate>
-        
-        <guid>https://michellellehcim.github.io/tags/class/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Super</title>
-        <link>https://michellellehcim.github.io/tags/super/</link>
-        <pubDate>Mon, 25 Nov 2024 11:00:00 +0000</pubDate>
-        
-        <guid>https://michellellehcim.github.io/tags/super/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>繼承 Inheritance</title>
-        <link>https://michellellehcim.github.io/tags/%E7%B9%BC%E6%89%BF-inheritance/</link>
-        <pubDate>Mon, 25 Nov 2024 11:00:00 +0000</pubDate>
-        
-        <guid>https://michellellehcim.github.io/tags/%E7%B9%BC%E6%89%BF-inheritance/</guid>
         <description></description>
         </item>
         <item>

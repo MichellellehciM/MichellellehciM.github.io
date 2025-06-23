@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="zh-tw" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="初學 Python 看不懂 class 繼承？這篇用最生活化的範例，帶你一步步理解繼承、__init__ 、self、 super() 的用法。">
+<title>Python OOP入門指南 (一) ：繼承</title>
+
+<link rel='canonical' href='https://michellellehcim.github.io/p/python-inheritance-guide2/'>
+
+<link rel="stylesheet" href="/scss/style.min.99b51a4ad23d45d4674e9d761a82368bf69becb9aa1e6651c13a022e8d2cf48e.css"><meta property='og:title' content="Python OOP入門指南 (一) ：繼承">
+<meta property='og:description' content="初學 Python 看不懂 class 繼承？這篇用最生活化的範例，帶你一步步理解繼承、__init__ 、self、 super() 的用法。">
+<meta property='og:url' content='https://michellellehcim.github.io/p/python-inheritance-guide2/'>
+<meta property='og:site_name' content='Tomatos&#39;s Cat'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Python基礎' /><meta property='article:tag' content='OOP' /><meta property='article:tag' content='class' /><meta property='article:tag' content='繼承 inheritance' /><meta property='article:tag' content='super' /><meta property='article:published_time' content='2025-05-25T11:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-05-25T11:00:00&#43;00:00'/><meta property='og:image' content='https://michellellehcim.github.io/p/python-inheritance-guide2/python_inheritance.png' />
+<meta name="twitter:title" content="Python OOP入門指南 (一) ：繼承">
+<meta name="twitter:description" content="初學 Python 看不懂 class 繼承？這篇用最生活化的範例，帶你一步步理解繼承、__init__ 、self、 super() 的用法。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://michellellehcim.github.io/p/python-inheritance-guide2/python_inheritance.png' />
+    <link rel="shortcut icon" href="/favicon.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu12764943903786774946.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">👩🏻‍💻</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Tomatos&#39;s Cat</a></h1>
+            <h2 class="site-description">🍅🐈💻</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/MichellellehciM'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#什麼是繼承">什麼是繼承？</a></li>
+    <li><a href="#什麼是-__init__-為什麼每個類別都有它">什麼是 <strong>init</strong>( )？為什麼每個類別都有它？</a>
+      <ol>
+        <li><a href="#為什麼需要-constructor建構子">為什麼需要 constructor（建構子）？</a></li>
+      </ol>
+    </li>
+    <li><a href="#什麼是self">什麼是self？</a></li>
+    <li><a href="#小結">小結:</a></li>
+    <li><a href="#繼承-基礎寫法">繼承 (基礎寫法):</a></li>
+    <li><a href="#什麼是-super-">什麼是 super( )？</a></li>
+    <li><a href="#繼承-進階寫法">繼承 (進階寫法)</a>
+      <ol>
+        <li><a href="#小結-1">小結:</a></li>
+      </ol>
+    </li>
+    <li><a href="#總結">總結：</a></li>
+    <li><a href="#繼承-完整範例">繼承 (完整範例)</a></li>
+    <li><a href="#常見問題-qa">常見問題 Q&amp;A</a>
+      <ol>
+        <li><a href="#q1-為什麼要繼承">Q1: 為什麼要繼承？</a></li>
+        <li><a href="#q2-一定要用-super-嗎">Q2: 一定要用 <code>super()</code> 嗎？</a></li>
+        <li><a href="#q3-子類別可以新增自己的方法嗎">Q3: 子類別可以新增自己的方法嗎？</a></li>
+        <li><a href="#q4-如果子類別沒有寫-__init__-會怎樣">Q4: 如果子類別沒有寫 <code>__init__</code> 會怎樣？</a></li>
+        <li><a href="#q5-可以繼承多個父類別嗎">Q5: 可以繼承多個父類別嗎？</a></li>
+      </ol>
+    </li>
+    <li><a href="#-腦力激盪">🤔 腦力激盪</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/python-inheritance-guide2/">
+                <img src="/p/python-inheritance-guide2/python_inheritance_hu11804167348441867901.png"
+                        srcset="/p/python-inheritance-guide2/python_inheritance_hu11804167348441867901.png 800w, /p/python-inheritance-guide2/python_inheritance_hu1721514999355521583.png 1600w"
+                        width="800" 
+                        height="448" 
+                        loading="lazy"
+                        alt="Featured image of post Python OOP入門指南 (一) ：繼承" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/python/" >
+                Python
+            </a>
+        
+            <a href="/categories/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/" >
+                程式設計
+            </a>
+        
+            <a href="/categories/oop/" >
+                OOP
+            </a>
+        
+            <a href="/categories/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91/" >
+                物件導向
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/python-inheritance-guide2/">Python OOP入門指南 (一) ：繼承</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            初學 Python 看不懂 class 繼承？這篇用最生活化的範例，帶你一步步理解繼承、__init__ 、self、 super() 的用法。
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">May 25, 2025</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <hr>
+<h2 id="什麼是繼承">什麼是繼承？
+</h2><p>繼承是物件導向中的一個重要概念。簡單來說：</p>
+<p>子類別（子 class）可以擁有父類別的屬性（Attribute）和方法（Method），不用重新寫一遍。
+<br> 就像你從父母那裏繼承了身高、髮色，甚至壞習慣（？）</p>
+<hr>
+<p><strong>在開始介紹繼承前，我們先來看一下這段程式碼:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Product</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">price</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>  <span class="c1"># 將傳入的 name 存成物件的屬性</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">price</span> <span class="o">=</span> <span class="n">price</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Product</span><span class="p">(</span><span class="s2">&#34;果汁&#34;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>  <span class="c1"># 建立物件時，會自動執行 __init__() 方法。</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="什麼是-__init__-為什麼每個類別都有它">什麼是 <strong>init</strong>( )？為什麼每個類別都有它？
+</h2><p>你可以把 <strong>init</strong>( ) 想像成「物件的出生設定」，它會自動幫你設定這個物件的「初始狀態」，例如名稱、價格等等。物件一創出生時，這個方法就會自動被執行，設定好初始資料。</p>
+<p><strong><strong>init</strong>( ) 有一個專業術語叫 &ldquo;constructor （建構子&rdquo;）</strong> :
+這是用來初始化物件、在物件「出生」的那一刻就自動執行。</p>
+<h3 id="為什麼需要-constructor建構子">為什麼需要 constructor（建構子）？
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 如果沒有 __init__()</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span> <span class="o">=</span> <span class="n">Product</span><span class="p">()</span>  
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&#34;果汁&#34;</span>  <span class="c1"># 就得手動幫每個物件設定屬性</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">price</span> <span class="o">=</span> <span class="mi">30</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 但使用 __init__()</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span> <span class="o">=</span> <span class="n">Product</span><span class="p">(</span><span class="s2">&#34;果汁&#34;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>  <span class="c1"># 只要一句話就完成</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="什麼是self">什麼是self？
+</h2><p>self 指的是「目前這個物件本身」。就像你在介紹自己：「我的名字是 self.name」，這樣每個物件就能記住自己的資料。</p>
+<h2 id="小結">小結:
+</h2><ul>
+<li><strong>init</strong> 是 <strong>對物件進行初始化</strong> 的特殊方法（constructor）。</li>
+<li>self 是 <strong>物件本身</strong>，指的是這個 class 所建立出來的物件。</li>
+</ul>
+<hr>
+<br>
+<p>介紹完了__init__和self, 我們就可以來寫繼承了:<br>
+首先，繼承的基礎寫法為 <strong>class 子(父)</strong> ， 代表子繼承父的屬性及方法。</p>
+<h2 id="繼承-基礎寫法">繼承 (基礎寫法):
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Product</span><span class="p">:</span> <span class="c1"># 先創建一個Product類別</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">price</span><span class="p">):</span>  <span class="c1"># 這是創建物件時會裝入的初始化功能</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>  <span class="c1"># self.屬性name</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">price</span> <span class="o">=</span> <span class="n">price</span>  <span class="c1"># self.屬性price</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Drink</span><span class="p">(</span><span class="n">Product</span><span class="p">):</span>  <span class="c1"># (子)繼承(父)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">volume</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Product</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span>  <span class="c1"># (1)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">volume</span> <span class="o">=</span> <span class="n">volume</span>  <span class="c1"># (2)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>這裡我們做了幾件事 : (1)「手動」呼叫父類別 Product 的 <strong>init</strong>( )，來初始化 name 和 price，然後再 (2) 自己新增 volume。</p>
+<p>我們來看這一句 :<br></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">        <span class="n">Product</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span>  <span class="c1"># 呼叫父類別的 __init__方法 </span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>(父類別名稱).<strong>init</strong>(self,&hellip;)</strong>
+這種寫法看似沒什麼問題，但會有幾個缺點：</p>
+<ul>
+<li>
+<p>如果未來父類別名稱改變，這裡也必要跟著一起改 → 維護困難。</p>
+</li>
+<li>
+<p>若有多重繼承（萬一同時繼承多個父類別）會搞混。</p>
+</li>
+</ul>
+<hr>
+<p>為了解決上述問題，Python 提供了 super( ) 內建函式：</p>
+<h2 id="什麼是-super-">什麼是 super( )？
+</h2><p>super( ) 用來從子類別中呼叫父類別的方法。super( ) 代表的是「父類別」，但不用寫死父類別的名字。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># ✅ 推薦寫法（更安全、彈性高、支援多重繼承） </span>
+</span></span><span class="line"><span class="cl"><span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 不推薦寫法（不夠彈性、父類別名稱寫死，未來難改）</span>
+</span></span><span class="line"><span class="cl"><span class="n">Product</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<p>所以我們可以這樣寫</p>
+<h2 id="繼承-進階寫法">繼承 (進階寫法)
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Drink</span><span class="p">(</span><span class="n">Product</span><span class="p">):</span> 
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">volume</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span>  <span class="c1"># 呼叫父類別的 __init__</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">volume</span> <span class="o">=</span> <span class="n">volume</span>  
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果你未來把 Product 改名成 Item ， 用 super( ) 就不需要手動修改任何東西。</p>
+<h3 id="小結-1">小結:
+</h3><blockquote>
+<p><strong>當你想在「原本功能不變」的基礎上加一點自己的功能，就用 super() 把父類的東西也一起執行。</strong></p>
+</blockquote>
+<h2 id="總結">總結：
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>概念</th>
+          <th>解釋</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>init</strong>()</td>
+          <td>物件初始化方法（像是出生設定）</td>
+      </tr>
+      <tr>
+          <td>constructor</td>
+          <td>建構子，負責建立物件時的初始化行為</td>
+      </tr>
+      <tr>
+          <td>self</td>
+          <td>指向目前的物件本身</td>
+      </tr>
+      <tr>
+          <td>Product.<strong>init</strong>()</td>
+          <td>明確呼叫父類別的方法（不推）</td>
+      </tr>
+      <tr>
+          <td>super().<strong>init</strong>()</td>
+          <td>推薦方式，維護性高，更安全</td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<h2 id="繼承-完整範例">繼承 (完整範例)
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Drink</span><span class="p">(</span><span class="n">Product</span><span class="p">):</span> 
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">volume</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span>  <span class="c1"># 輕鬆繼用 Product 的設定</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">volume</span> <span class="o">=</span> <span class="n">volume</span>  <span class="c1"># Drink 自己的新屬性</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">d</span> <span class="o">=</span> <span class="n">Drink</span><span class="p">(</span><span class="s1">&#39;珍珠奶茶&#39;</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span> <span class="c1"># 投入參數</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>     <span class="c1"># 珍珠奶茶</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">price</span><span class="p">)</span>    <span class="c1"># 80</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">volume</span><span class="p">)</span>   <span class="c1"># 600</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="常見問題-qa">常見問題 Q&amp;A
+</h2><h3 id="q1-為什麼要繼承">Q1: 為什麼要繼承？
+</h3><p><strong>A:</strong> 繼承可以讓我們重複使用既有的程式碼，避免每個類別都重頭寫一次。比如你定義了一個 Product 類別，之後建立 Drink、Snack 等類別時，就能直接繼承 Product 的屬性與方法，只補上各自特有的部分即可。</p>
+<h3 id="q2-一定要用-super-嗎">Q2: 一定要用 <code>super()</code> 嗎？
+</h3><p><strong>A:</strong> 沒有硬性規定，你也可以直接用 <code>Product.__init__(self, name, price)</code>，但 <code>super()</code> 是更推薦的寫法，特別是後續有多重繼承時會更簡潔。</p>
+<h3 id="q3-子類別可以新增自己的方法嗎">Q3: 子類別可以新增自己的方法嗎？
+</h3><p><strong>A:</strong> 當然可以！你可以在 Drink 裡加上任何想加的方法或屬性。</p>
+<h3 id="q4-如果子類別沒有寫-__init__-會怎樣">Q4: 如果子類別沒有寫 <code>__init__</code> 會怎樣？
+</h3><p><strong>A:</strong> Python 會自動使用父類別的 <code>__init__()</code>，不會報錯，只是就無法加入子類別自己的新屬性了 <strong># (1)</strong>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Product</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">price</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">price</span> <span class="o">=</span> <span class="n">price</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># (1)子類別沒有寫 __init__()</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Snack</span><span class="p">(</span><span class="n">Product</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">pass</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">s1</span> <span class="o">=</span> <span class="n">Snack</span><span class="p">(</span><span class="s2">&#34;洋芋片&#34;</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>   <span class="c1"># 洋芋片</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">price</span><span class="p">)</span>  <span class="c1"># 50</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># (2)子類別有寫 __init__() </span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Snack</span><span class="p">(</span><span class="n">Product</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">flavor</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">flavor</span> <span class="o">=</span> <span class="n">flavor</span>  <span class="c1"># 可以加上新屬性</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">s2</span> <span class="o">=</span> <span class="n">Snack</span><span class="p">(</span><span class="s2">&#34;洋芋片&#34;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">&#34;鹽味&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>   <span class="c1"># 洋芋片</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">price</span><span class="p">)</span>  <span class="c1"># 50</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">flavor</span><span class="p">)</span>  <span class="c1"># 鹽味</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="q5-可以繼承多個父類別嗎">Q5: 可以繼承多個父類別嗎？
+</h3><p><strong>A:</strong> 可以，Python 支援 <strong>多重繼承</strong>，例如：<code>class A(B, C)</code>，但建議初學者先從單一繼承開始學起。</p>
+<hr>
+<h2 id="-腦力激盪">🤔 腦力激盪
+</h2><p>如果你要寫一個 Student 類別，你會繼承 Person 還是 Teenager？為什麼？</p>
+<hr>
+<p>(參考答案)</p>
+<ul>
+<li>
+<p>初階想法：
+我會繼承 Teenager，因為大多數學生是青少年，而 Teenager 裡的屬性像「打工」或「升學壓力」也適用，直接用比較方便。</p>
+</li>
+<li>
+<p>進階想法：
+如果我的 Student 類別要包含國小、國中、高中、研究所，那就不適合只繼承 Teenager，應該回頭繼承 Person，再自己定義年齡區段或學級屬性。</p>
+</li>
+</ul>
+<hr>
+<p>感謝閱讀這篇簡單實用的繼承入門指南，希望你有更熟悉 class 的應用！~</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/python%E5%9F%BA%E7%A4%8E/">Python基礎</a>
+        
+            <a href="/tags/oop/">OOP</a>
+        
+            <a href="/tags/class/">Class</a>
+        
+            <a href="/tags/%E7%B9%BC%E6%89%BF-inheritance/">繼承 Inheritance</a>
+        
+            <a href="/tags/super/">Super</a>
+        
+    </section>
+
+
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            Last updated on May 25, 2025 11:00 UTC
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/python-encapsulation-guide/">
+        
+        
+            <div class="article-image">
+                <img src="/p/python-encapsulation-guide/python_encapsulation.56b812e800a08a6905deb032faf06726_hu9693738819989330444.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Python OOP入門指南 (三) ：封裝"
+                        data-key="python-encapsulation-guide" 
+                        data-hash="md5-VrgS6ACgimkF3rAy&#43;vBnJg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Python OOP入門指南 (三) ：封裝</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/python-polymorphism-guide/">
+        
+        
+            <div class="article-image">
+                <img src="/p/python-polymorphism-guide/python_polymorphism_guide.0244d23d89858032c59029018ae09279_hu4577286421694334425.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Python OOP入門指南 (四) ：多型"
+                        data-key="python-polymorphism-guide" 
+                        data-hash="md5-AkTSPYmFgDLFkCkBiuCSeQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Python OOP入門指南 (四) ：多型</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/python-abstract-class-guide/">
+        
+        
+            <div class="article-image">
+                <img src="/p/python-abstract-class-guide/python_abc_guide.ec890f42f5c2a2303b83d5588d598a95_hu3396738684149395731.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Python OOP入門指南 (二) ：抽象  掌握 ABC 與 @abstractmethod"
+                        data-key="python-abstract-class-guide" 
+                        data-hash="md5-7IkPQvXCojA7g9VYjVmKlQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Python OOP入門指南 (二) ：抽象  掌握 ABC 與 @abstractmethod</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/python-staticmethod-guide/">
+        
+        
+            <div class="article-image">
+                <img src="/p/python-staticmethod-guide/python_staticmethod_guide.0c93a89ef5d27a4adddade10d8c499c9_hu10526605203960798519.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Python 靜態方法（@staticmethod）新手教學：什麼時候該用？"
+                        data-key="python-staticmethod-guide" 
+                        data-hash="md5-DJOonvXSekrd2t4Q2MSZyQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Python 靜態方法（@staticmethod）新手教學：什麼時候該用？</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/python-iterator/">
+        
+        
+            <div class="article-image">
+                <img src="/p/python-iterator/python_iterator.d4b1cbf08be331437fbff9b20d4bf3d7_hu18323931027324967258.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Python 可迭代 (Iteratable) 與 迭代器 (Iterator) 入門"
+                        data-key="python-iterator" 
+                        data-hash="md5-1LHL8IvjMUN/v/myDUvz1w==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Python 可迭代 (Iteratable) 與 迭代器 (Iterator) 入門</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "michelle-theme" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2025 Tomatos&#39;s Cat
+    </section>
+    
+    <section class="powerby">
+        
+            2025 Michelle's Blog. All rights reserved <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

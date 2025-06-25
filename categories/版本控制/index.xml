@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>版本控制 on Tomatos&#39;s Cat</title>
+        <link>https://michellellehcim.github.io/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/</link>
+        <description>Recent content in 版本控制 on Tomatos&#39;s Cat</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <lastBuildDate>Wed, 25 Jun 2025 10:00:00 +0000</lastBuildDate><atom:link href="https://michellellehcim.github.io/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Git 和 GitHub 的差別？以及那些你不知道的冷知識！</title>
+        <link>https://michellellehcim.github.io/p/git-vs-github/</link>
+        <pubDate>Wed, 25 Jun 2025 10:00:00 +0000</pubDate>
+        
+        <guid>https://michellellehcim.github.io/p/git-vs-github/</guid>
+        <description>&lt;img src="https://michellellehcim.github.io/p/git-vs-github/git-github.png" alt="Featured image of post Git 和 GitHub 的差別？以及那些你不知道的冷知識！" /&gt;&lt;hr&gt;
+&lt;h2 id=&#34;git-和-github-的冷知識你能回答得出幾個&#34;&gt;Git 和 GitHub 的冷知識，你能回答得出幾個?
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Git 的作者是誰？&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;(A) 一個英國黑客&lt;/li&gt;
+&lt;li&gt;(B) Linux 之父&lt;/li&gt;
+&lt;li&gt;(C) 微軟創辦人&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;GitHub 的吉祥物其實不是貓!?&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;GitHub 的 404 頁面有神祕彩蛋&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;你知道 Git 其實是很中二的命名方式嗎？&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;GitHub 把全世界的程式碼 冷凍 起來了！這是怎麼回事？&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;什麼是-git&#34;&gt;什麼是 Git？
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Git 是一個「版本控制系統」&lt;/strong&gt;。&lt;br&gt;
+它的主要功能是&lt;strong&gt;在你的電腦上記錄、管理專案的所有修改歷史&lt;/strong&gt;，就像為每一份檔案做備份。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;可以追蹤程式碼改了什麼、什麼時候改的、誰改的&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;每次改動都被記錄下來，一點都不會漏掉&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;不小心寫壞也不用怕，一鍵回到過去&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;把 Git 想像成「你自己電腦上的時光機」，可以隨時回到以前的版本。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;什麼是-github&#34;&gt;什麼是 GitHub？
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;GitHub 是一個「線上的程式碼託管平台」&lt;/strong&gt;。&lt;br&gt;
+它讓你可以把自己電腦上的 Git 專案「推送（push）」到網路上，&lt;br&gt;
+方便&lt;strong&gt;多人協作、備份、開源分享&lt;/strong&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;讓團隊成員一起開發專案&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;能線上審查（review）、討論、管理任務&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;就算電腦壞了，雲端也有備份&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;GitHub 像是「放你時光機記錄的所有版本的雲端資料庫」，你也能邀請朋友一起來看、一起改。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;git-與-github-的關係&#34;&gt;Git 與 GitHub 的關係
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Git&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;GitHub&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;定位&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;版本控制工具（軟體）&lt;/td&gt;
+          &lt;td&gt;雲端協作平台（網站、服務）&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;作用&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;追蹤/記錄本地檔案的所有變更&lt;/td&gt;
+          &lt;td&gt;存放 Git 專案、多人協作與分享&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;使用地點&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;自己的電腦&lt;/td&gt;
+          &lt;td&gt;網路（cloud）&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;需不需要網路&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;不一定，離線也能用&lt;/td&gt;
+          &lt;td&gt;需要網路&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;互動方式&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;指令操作（git init, commit）&lt;/td&gt;
+          &lt;td&gt;介面/網站操作，也有 API&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;例子&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;git commit&lt;/code&gt;, &lt;code&gt;git status&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Pull request、Issue、Actions&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Git 負責管理你電腦上的程式碼歷史紀錄&lt;/strong&gt;，&lt;strong&gt;GitHub 則是讓大家能在雲端一起同步、討論與展示這些變動。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;沒有 GitHub 也能用 Git，但團隊協作、遠端備份會很麻煩。
+(就像你上課寫筆記，想要跟朋友共用、備份、共寫，就一定要放到雲端（比如 Google 雲端硬碟、Notion、GitHub）才能一起修改)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;其實還有 GitLab、Bitbucket 等其他雲端平台，但 GitHub 最有名。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;常見問題-qa&#34;&gt;❓常見問題 Q&amp;amp;A
+&lt;/h2&gt;&lt;h3 id=&#34;q1-github-是不是等於-git&#34;&gt;Q1. GitHub 是不是等於 Git？
+&lt;/h3&gt;&lt;p&gt;不是！Git 是版本控制工具，GitHub 是雲端平台。你可以只學 Git，不用 GitHub；但用 GitHub 前一定要會 Git。&lt;/p&gt;
+&lt;h3 id=&#34;q2-一定要用-github-嗎&#34;&gt;Q2. 一定要用 GitHub 嗎？
+&lt;/h3&gt;&lt;p&gt;不用，可以選擇 GitLab、Bitbucket…等類似服務，甚至只用 Git 管理本地專案也沒問題。但現今多數開源和團隊專案都用 GitHub。&lt;/p&gt;
+&lt;h3 id=&#34;q3-不會-git-可以直接用-github-嗎&#34;&gt;Q3. 不會 Git 可以直接用 GitHub 嗎？
+&lt;/h3&gt;&lt;p&gt;不行。GitHub 的核心運作還是基於 Git 指令（commit、push、pull 等），所以要先懂 Git。&lt;/p&gt;
+&lt;h3 id=&#34;q4-實際開發流程長怎樣&#34;&gt;Q4. 實際開發流程長怎樣？
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;在本地用 Git 版本控制（init、add、commit）&lt;/li&gt;
+&lt;li&gt;用 GitHub 當「遠端倉庫」（push 上去，團隊 pull 下來一起改）&lt;/li&gt;
+&lt;li&gt;團隊協作、Code Review 都在 GitHub 平台完成&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;冷知識解答區&#34;&gt;冷知識解答區
+&lt;/h2&gt;&lt;h3 id=&#34;1-git-的作者到底是誰&#34;&gt;1. Git 的作者到底是誰？
+&lt;/h3&gt;&lt;p&gt;答案是 &lt;strong&gt;(B) Linux 之父 Linus Torvalds&lt;/strong&gt;！&lt;br&gt;
+Linus Torvalds（Linux 之父）原本是為了管理 Linux 核心原始碼才開發出 Git，他認為當時沒有免費且好用的版本控制工具，乾脆自己寫一套，他在 2005 年花了兩週寫出 Git。&lt;/p&gt;
+&lt;h3 id=&#34;2-github-的吉祥物其實不是貓&#34;&gt;2. GitHub 的吉祥物其實不是貓!?
+&lt;/h3&gt;&lt;p&gt;其實 &lt;strong&gt;Octocat&lt;/strong&gt; 是一隻結合章魚（Octopus）和貓（Cat）的超可愛生物！想看所有 Octocat 的造型可以直接逛&lt;a class=&#34;link&#34; href=&#34;https://octodex.github.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Octodex 官網&lt;/a&gt;。&lt;/p&gt;
+&lt;img src=&#34;image-1.png&#34; alt=&#34;alt text&#34; width=&#34;120&#34;/&gt;
+&lt;img src=&#34;image-2.png&#34; alt=&#34;alt text&#34; width=&#34;120&#34;/&gt;
+&lt;img src=&#34;image-3.png&#34; alt=&#34;alt text&#34; width=&#34;120&#34;/&gt;
+&lt;h3 id=&#34;3-github-的-404-頁面有彩蛋&#34;&gt;3. GitHub 的 404 頁面有彩蛋？
+&lt;/h3&gt;&lt;p&gt;沒錯~ 只要在瀏覽器進入一個不存在的 GitHub 網址，&lt;br&gt;
+例如：
+&lt;a class=&#34;link&#34; href=&#34;https://github.com/this-page-does-not-exist&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;github.com/this-page-does-not-exist&lt;/a&gt;&lt;br&gt;
+404 頁面就會出現可愛的章魚貓，圖案經常變換，有時還能看到特殊主題（如節日、紀念日）限定插圖。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://michellellehcim.github.io/p/git-vs-github/image.png&#34;
+	width=&#34;1835&#34;
+	height=&#34;380&#34;
+	srcset=&#34;https://michellellehcim.github.io/p/git-vs-github/image_hu18340405184432535208.png 480w, https://michellellehcim.github.io/p/git-vs-github/image_hu13510947941949285027.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;404 頁面&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;482&#34;
+		data-flex-basis=&#34;1158px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;4-git的名字很中二&#34;&gt;4. 「Git」的名字很中二？
+&lt;/h3&gt;&lt;p&gt;真的，Linus 在剛釋出的 Git 的 README 檔案中寫道：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;git 是隨便挑的發音簡單的三個字母，沒有特別意義。&lt;/li&gt;
+&lt;li&gt;git 在英文可指「蠢蛋」、「討人厭的傢伙」、「白癡」，你隨便從字典裡挑一個定義吧！&lt;/li&gt;
+&lt;li&gt;如果心情好時，他會把 git 當成 &amp;ldquo;global information tracker&amp;rdquo; (全球訊息追蹤器)。&lt;/li&gt;
+&lt;li&gt;當 git 壞掉時，他會把 git 罵成 &amp;ldquo;goddamn idiotic truckload of sh*t&amp;rdquo; (一堆爛屎)。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/git/git/blob/master/README.md&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;git README 原文檔案&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;5-github-將全世界的-code-冷凍起來了&#34;&gt;5. GitHub 將全世界的 code 冷凍起來了？
+&lt;/h3&gt;&lt;p&gt;沒錯！GitHub 把所有2020 年 2 月 2 日前還 active 的開源專案，全部燒錄成 188 捲特製膠片，放在 北極程式碼庫（Arctic Code Vault）裡，希望能保存 1000 年。&lt;/p&gt;
+&lt;p&gt;只要你的程式碼有被 GitHub 收錄進北極備份，GitHub 就會在你的個人頁面加上一個「Arctic Code Vault」徽章，代表你也是人類文明備份的一份子！&lt;/p&gt;
+&lt;h2 id=&#34;總結&#34;&gt;總結
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Git = 版本控制工具，讓你管理自己電腦上的程式碼歷史&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GitHub = 雲端平台，讓你把 Git 專案放到網路上，方便備份、多人協作&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Git 是基礎，GitHub 讓協作和分享變簡單&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;互動問題&#34;&gt;互動問題
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;你平常有備份檔案的習慣嗎？如果是團隊合作，怎麼確保大家都用同一份檔案？&lt;/li&gt;
+&lt;li&gt;你覺得本地 Git 和雲端 GitHub 最大的差別是什麼？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;延伸閱讀&#34;&gt;延伸閱讀
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://git-scm.com/book/zh-tw/v2&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Git 官方教學&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

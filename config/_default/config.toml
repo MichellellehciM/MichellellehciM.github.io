@@ -20,3 +20,11 @@ pagerSize = 10
 
 [[module.imports]]
 path = "github.com/CaiJimmy/hugo-theme-stack/v3"
+
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[params.assets]
+disableFingerprinting = true

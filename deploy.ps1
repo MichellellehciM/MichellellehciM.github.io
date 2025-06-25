@@ -21,4 +21,7 @@ git add .
 git commit -m "deploy: $message (gh-pages)"
 git push -f origin gh-pages
 
-Write-Host "✅ 部署完成！請查看：https://michellellehcim.github.io/"
+Write-Host " 部署完成！請查看：https://michellellehcim.github.io/"
+
+
+# .\deploy.ps1 "輸入內容"

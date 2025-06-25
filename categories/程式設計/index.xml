@@ -7,16 +7,17 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <lastBuildDate>Wed, 25 Jun 2025 10:00:00 +0000</lastBuildDate><atom:link href="https://michellellehcim.github.io/categories/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Git 和 GitHub 的差別？以及那些你不知道的冷知識！</title>
+        <title>Git 和 GitHub 的區別？以及那些你不知道的冷知識！</title>
         <link>https://michellellehcim.github.io/p/git-vs-github/</link>
         <pubDate>Wed, 25 Jun 2025 10:00:00 +0000</pubDate>
         
         <guid>https://michellellehcim.github.io/p/git-vs-github/</guid>
-        <description>&lt;img src="https://michellellehcim.github.io/p/git-vs-github/git-github.png" alt="Featured image of post Git 和 GitHub 的差別？以及那些你不知道的冷知識！" /&gt;&lt;hr&gt;
+        <description>&lt;img src="https://michellellehcim.github.io/p/git-vs-github/git-github.png" alt="Featured image of post Git 和 GitHub 的區別？以及那些你不知道的冷知識！" /&gt;&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;在開始之前，先來考考大家—&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;git-和-github-的冷知識你能回答得出幾個&#34;&gt;Git 和 GitHub 的冷知識，你能回答得出幾個?
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Git 的作者是誰？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Git 的作者是誰？&lt;/strong&gt;  &lt;a class=&#34;link&#34; href=&#34;#1-git-%e7%9a%84%e4%bd%9c%e8%80%85%e5%88%b0%e5%ba%95%e6%98%af%e8%aa%b0&#34; &gt;答案&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;(A) 一個英國黑客&lt;/li&gt;
 &lt;li&gt;(B) Linux 之父&lt;/li&gt;
@@ -24,16 +25,16 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;GitHub 的吉祥物其實不是貓!?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;GitHub 的吉祥物其實不是貓!?&lt;/strong&gt;  &lt;a class=&#34;link&#34; href=&#34;#2-github-%e7%9a%84%e5%90%89%e7%a5%a5%e7%89%a9%e5%85%b6%e5%af%a6%e4%b8%8d%e6%98%af%e8%b2%93&#34; &gt;答案&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;GitHub 的 404 頁面有神祕彩蛋&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;GitHub 的 404 頁面有神祕彩蛋!?&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;#3-github-%e7%9a%84-404-%e9%a0%81%e9%9d%a2%e6%9c%89%e5%bd%a9%e8%9b%8b&#34; &gt;答案&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;你知道 Git 其實是很中二的命名方式嗎？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;你知道 Git 其實是很中二的命名方式嗎？&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;#4-git-%e7%9a%84%e5%90%8d%e5%ad%97%e5%be%88%e4%b8%ad%e4%ba%8c&#34; &gt;答案&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;GitHub 把全世界的程式碼 冷凍 起來了！這是怎麼回事？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;GitHub 把全世界的程式碼 冷凍 起來了！這是怎麼回事？&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;#5-github-%e5%b0%87%e5%85%a8%e4%b8%96%e7%95%8c%e7%9a%84-code-%e5%86%b7%e5%87%8d%e8%b5%b7%e4%be%86%e4%ba%86&#34; &gt;答案&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
@@ -61,6 +62,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;GitHub 像是「放你時光機記錄的所有版本的雲端資料庫」，你也能邀請朋友一起來看、一起改。&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;hr&gt;
 &lt;h2 id=&#34;git-與-github-的關係&#34;&gt;Git 與 GitHub 的關係
 &lt;/h2&gt;&lt;table&gt;
   &lt;thead&gt;
@@ -133,7 +135,7 @@
 &lt;h2 id=&#34;冷知識解答區&#34;&gt;冷知識解答區
 &lt;/h2&gt;&lt;h3 id=&#34;1-git-的作者到底是誰&#34;&gt;1. Git 的作者到底是誰？
 &lt;/h3&gt;&lt;p&gt;答案是 &lt;strong&gt;(B) Linux 之父 Linus Torvalds&lt;/strong&gt;！&lt;br&gt;
-Linus Torvalds（Linux 之父）原本是為了管理 Linux 核心原始碼才開發出 Git，他認為當時沒有免費且好用的版本控制工具，乾脆自己寫一套，他在 2005 年花了兩週寫出 Git。&lt;/p&gt;
+Linus Torvalds（Linux 之父）原本是為了管理 Linux 核心原始碼才開發出 Git，他認為當時沒有免費且好用的版本控制工具，乾脆自己寫一套，他在 2005 年只花了兩週就寫出 Git。&lt;/p&gt;
 &lt;h3 id=&#34;2-github-的吉祥物其實不是貓&#34;&gt;2. GitHub 的吉祥物其實不是貓!?
 &lt;/h3&gt;&lt;p&gt;其實 &lt;strong&gt;Octocat&lt;/strong&gt; 是一隻結合章魚（Octopus）和貓（Cat）的超可愛生物！想看所有 Octocat 的造型可以直接逛&lt;a class=&#34;link&#34; href=&#34;https://octodex.github.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Octodex 官網&lt;/a&gt;。&lt;/p&gt;
@@ -163,7 +165,7 @@ Linus Torvalds（Linux 之父）原本是為了管理 Linux 核心原始碼才�
 &lt;h3 id=&#34;4-git的名字很中二&#34;&gt;4. 「Git」的名字很中二？
 &lt;/h3&gt;&lt;p&gt;真的，Linus 在剛釋出的 Git 的 README 檔案中寫道：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;git 是隨便挑的發音簡單的三個字母，沒有特別意義。&lt;/li&gt;
+&lt;li&gt;git 是隨便挑的發音簡單的三個字母，沒有特別意義。至於它是不是 “get” 的發音錯誤，倒也不重要。&lt;/li&gt;
 &lt;li&gt;git 在英文可指「蠢蛋」、「討人厭的傢伙」、「白癡」，你隨便從字典裡挑一個定義吧！&lt;/li&gt;
 &lt;li&gt;如果心情好時，他會把 git 當成 &amp;ldquo;global information tracker&amp;rdquo; (全球訊息追蹤器)。&lt;/li&gt;
 &lt;li&gt;當 git 壞掉時，他會把 git 罵成 &amp;ldquo;goddamn idiotic truckload of sh*t&amp;rdquo; (一堆爛屎)。&lt;/li&gt;
@@ -173,20 +175,20 @@ Linus Torvalds（Linux 之父）原本是為了管理 Linux 核心原始碼才�
 &lt;h3 id=&#34;5-github-將全世界的-code-冷凍起來了&#34;&gt;5. GitHub 將全世界的 code 冷凍起來了？
 &lt;/h3&gt;&lt;p&gt;沒錯！GitHub 把所有2020 年 2 月 2 日前還 active 的開源專案，全部燒錄成 188 捲特製膠片，放在 北極程式碼庫（Arctic Code Vault）裡，希望能保存 1000 年。&lt;/p&gt;
 &lt;p&gt;只要你的程式碼有被 GitHub 收錄進北極備份，GitHub 就會在你的個人頁面加上一個「Arctic Code Vault」徽章，代表你也是人類文明備份的一份子！&lt;/p&gt;
+&lt;hr&gt;
 &lt;h2 id=&#34;總結&#34;&gt;總結
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Git = 版本控制工具，讓你管理自己電腦上的程式碼歷史&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;GitHub = 雲端平台，讓你把 Git 專案放到網路上，方便備份、多人協作&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;Git 是基礎，GitHub 讓協作和分享變簡單&lt;/li&gt;
 &lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;互動問題&#34;&gt;互動問題
+&lt;h2 id=&#34;腦力激盪&#34;&gt;腦力激盪
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;你平常有備份檔案的習慣嗎？如果是團隊合作，怎麼確保大家都用同一份檔案？&lt;/li&gt;
 &lt;li&gt;你覺得本地 Git 和雲端 GitHub 最大的差別是什麼？&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;延伸閱讀&#34;&gt;延伸閱讀
-&lt;/h3&gt;&lt;ul&gt;
+&lt;h2 id=&#34;延伸閱讀&#34;&gt;延伸閱讀
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://git-scm.com/book/zh-tw/v2&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Git 官方教學&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;

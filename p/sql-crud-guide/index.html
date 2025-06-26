@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="zh-tw" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="不懂 SQL 沒關係，用白話文帶你從零理解 SQL 與資料庫操作，重點 CRUD 一次學會，讓你資料處理技能大升級！">
+<title>SQL 新手入門：一篇學會資料庫 CRUD，從基礎到進階！</title>
+
+<link rel='canonical' href='https://michellellehcim.github.io/p/sql-crud-guide/'>
+
+<link rel="stylesheet" href="/scss/style.min.3f8a7a28b39d0e3bc59cee167ecf3a4d9174d90bee16411cfa488410ef5f3cd7.css"><meta property='og:title' content="SQL 新手入門：一篇學會資料庫 CRUD，從基礎到進階！">
+<meta property='og:description' content="不懂 SQL 沒關係，用白話文帶你從零理解 SQL 與資料庫操作，重點 CRUD 一次學會，讓你資料處理技能大升級！">
+<meta property='og:url' content='https://michellellehcim.github.io/p/sql-crud-guide/'>
+<meta property='og:site_name' content='Tomatos&#39;s Cat'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='SQL' /><meta property='article:tag' content='資料庫' /><meta property='article:tag' content='CRUD' /><meta property='article:tag' content='資料處理' /><meta property='article:published_time' content='2025-06-26T10:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-06-26T10:00:00&#43;00:00'/><meta property='og:image' content='https://michellellehcim.github.io/p/sql-crud-guide/sql-crud.png' />
+<meta name="twitter:title" content="SQL 新手入門：一篇學會資料庫 CRUD，從基礎到進階！">
+<meta name="twitter:description" content="不懂 SQL 沒關係，用白話文帶你從零理解 SQL 與資料庫操作，重點 CRUD 一次學會，讓你資料處理技能大升級！"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://michellellehcim.github.io/p/sql-crud-guide/sql-crud.png' />
+    <link rel="shortcut icon" href="/favicon.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu12764943903786774946.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">👩🏻‍💻</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Tomatos&#39;s Cat</a></h1>
+            <h2 class="site-description">🍅🐈💻</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/MichellellehciM'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#sql-是什麼為什麼學會它很重要">SQL 是什麼？為什麼學會它很重要？</a></li>
+    <li><a href="#crud-是什麼-">CRUD 是什麼 ?</a></li>
+    <li><a href="#crud-資料操作">CRUD 資料操作</a>
+      <ol>
+        <li><a href="#常用-crud-關鍵字與語法對照表">常用 CRUD 關鍵字與語法對照表:</a>
+          <ol>
+            <li><a href="#1-新增資料create">1️⃣ 新增資料（Create）</a></li>
+            <li><a href="#2-查詢資料read">2️⃣ 查詢資料（Read）</a></li>
+            <li><a href="#3-更新資料update">3️⃣ 更新資料（Update）</a></li>
+            <li><a href="#4-刪除資料delete">4️⃣ 刪除資料（Delete）</a></li>
+          </ol>
+        </li>
+        <li><a href="#實用建議--善用條件關鍵字-where-和-select">實用建議 : 善用條件關鍵字 <code>WHERE</code> 和 <code>SELECT</code></a></li>
+      </ol>
+    </li>
+    <li><a href="#crud-資料表結構操作資料表索引檢視表結構">CRUD 資料表結構操作（資料表/索引/檢視表結構）</a>
+      <ol>
+        <li><a href="#資料表結構-範例">資料表結構 (範例)</a></li>
+      </ol>
+    </li>
+    <li><a href="#常見新手-qa">常見新手 Q&amp;A</a>
+      <ol>
+        <li><a href="#q1-sql-跟-mysqlpostgresqlsqlite-有什麼不同">Q1. SQL 跟 MySQL、PostgreSQL、SQLite 有什麼不同？</a></li>
+        <li><a href="#q2-那些-sql-指令最常出錯">Q2. 那些 SQL 指令最常出錯？</a></li>
+        <li><a href="#q3-where-條件沒寫會怎樣">Q3. WHERE 條件沒寫，會怎樣？</a></li>
+        <li><a href="#q4-資料型態要怎麼選textintegerdatetime">Q4. 資料型態要怎麼選？（TEXT、INTEGER、DATETIME…）</a></li>
+      </ol>
+    </li>
+    <li><a href="#腦力激盪">腦力激盪</a></li>
+    <li><a href="#延伸">延伸</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/sql-crud-guide/">
+                <img src="/p/sql-crud-guide/sql-crud_hu13136854048149479005.png"
+                        srcset="/p/sql-crud-guide/sql-crud_hu13136854048149479005.png 800w, /p/sql-crud-guide/sql-crud_hu11682724931141931375.png 1600w"
+                        width="800" 
+                        height="444" 
+                        loading="lazy"
+                        alt="Featured image of post SQL 新手入門：一篇學會資料庫 CRUD，從基礎到進階！" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E8%B3%87%E6%96%99%E5%BA%AB/" >
+                資料庫
+            </a>
+        
+            <a href="/categories/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/" >
+                程式設計
+            </a>
+        
+            <a href="/categories/%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B8/" >
+                新手教學
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/sql-crud-guide/">SQL 新手入門：一篇學會資料庫 CRUD，從基礎到進階！</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            不懂 SQL 沒關係，用白話文帶你從零理解 SQL 與資料庫操作，重點 CRUD 一次學會，讓你資料處理技能大升級！
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jun 26, 2025</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="sql-是什麼為什麼學會它很重要">SQL 是什麼？為什麼學會它很重要？
+</h2><p>當你在設計一個網站，想開發儲存「網站會員」、「銷售訂單」、「留言紀錄」等等資料時，絕大多數情境都會用到資料庫，而 SQL（<strong>Structured Query Language</strong>，結構化查詢語言）正是資料庫的通用語言。</p>
+<p>不論你以後寫後端、做資料分析，甚至開發 APP，都會和 SQL 打交道。學會它，可以說是開啟資料世界的任意門。</p>
+<hr>
+<h2 id="crud-是什麼-">CRUD 是什麼 ?
+</h2><p><strong>CRUD 是資料庫最基本、也是最核心的資料操作流程，幾乎所有資料管理都圍繞著這四個動作進行。讓我們先來看一下 CRUD 分別有哪些 :</strong></p>
+<ul>
+<li><strong>C</strong>reate：新增資料</li>
+<li><strong>R</strong>ead：查詢資料</li>
+<li><strong>U</strong>pdate：更新資料</li>
+<li><strong>D</strong>elete：刪除資料</li>
+</ul>
+<p>也有人會記成「增、查、改、刪」。</p>
+<hr>
+<p>CRUD 可分為「資料操作」和「資料結構操作」，可以把它想成「表格內容操作」和「表格本身操作」。</p>
+<h2 id="crud-資料操作">CRUD 資料操作
+</h2><h3 id="常用-crud-關鍵字與語法對照表">常用 CRUD 關鍵字與語法對照表:
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th><strong>用途</strong></th>
+          <th><strong>關鍵字</strong></th>
+          <th><strong>說明</strong></th>
+          <th><strong>用途/功能</strong></th>
+          <th><strong>範例語法</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>C</td>
+          <td><code>INSERT INTO</code></td>
+          <td>插入到&hellip;表</td>
+          <td>把新資料「插入」某個表格</td>
+          <td><code>INSERT INTO</code> users (name, age) &hellip;</td>
+      </tr>
+      <tr>
+          <td>C</td>
+          <td><code>VALUES</code></td>
+          <td>資料值</td>
+          <td>搭配 INSERT INTO，後面放「要新增的資料」</td>
+          <td><code>VALUES</code> (&lsquo;Amy&rsquo;, 25);</td>
+      </tr>
+      <tr>
+          <td>R</td>
+          <td><code>SELECT</code></td>
+          <td>選擇/查詢</td>
+          <td>從資料表裡「查詢」你要的欄位或資料</td>
+          <td><code>SELECT</code> * <code>FROM</code> users;</td>
+      </tr>
+      <tr>
+          <td>R</td>
+          <td><code>FROM</code></td>
+          <td>從哪個表</td>
+          <td>搭配 SELECT，指定「查詢來自哪一張表」</td>
+          <td><code>SELECT</code> name <code>FROM</code> users;</td>
+      </tr>
+      <tr>
+          <td>U</td>
+          <td><code>UPDATE</code></td>
+          <td>更新</td>
+          <td>修改某一筆或多筆資料內容</td>
+          <td><code>UPDATE</code> users <code>SET</code> age = 30 &hellip;</td>
+      </tr>
+      <tr>
+          <td>U</td>
+          <td><code>SET</code></td>
+          <td>設定</td>
+          <td>指定要修改哪些欄位/值</td>
+          <td><code>SET</code> age = 30</td>
+      </tr>
+      <tr>
+          <td>D</td>
+          <td><code>DELETE</code></td>
+          <td>刪除</td>
+          <td>從資料表移除資料</td>
+          <td><code>DELETE</code> <code>FROM</code> users &hellip;</td>
+      </tr>
+      <tr>
+          <td>篩選條件</td>
+          <td><code>WHERE</code></td>
+          <td>條件</td>
+          <td>設定篩選的條件，只操作特定資料</td>
+          <td><code>WHERE</code> age &gt; 20</td>
+      </tr>
+  </tbody>
+</table></div>
+<blockquote>
+<p><strong>小提醒 : 絕大多數開發團隊與專案的寫作習慣如下 (建議遵守) :</strong></p>
+<ol>
+<li>關鍵字用大寫，如：SELECT、INSERT、FROM</li>
+<li>表格和欄位名用小寫，單字用下底線連接（建議）
+例：user_id, created_at</li>
+<li>善用縮排與換行</li>
+<li>複雜查詢分行排版更清楚</li>
+<li>有條件時一定要加 WHERE，避免全表誤操作</li>
+<li>用 <code>--</code> 單行註解說明每個步驟</li>
+</ol>
+</blockquote>
+<hr>
+<p>假設有一個資料表名稱為 users ，搭配 CRUD關鍵字後，我們來看看要如何實際對資料進行操作。</p>
+<h4 id="1-新增資料create">1️⃣ 新增資料（Create）
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- 新增一位使用者到 users 表格
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Michelle&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;michelle@example.com&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">26</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="2-查詢資料read">2️⃣ 查詢資料（Read）
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- 查詢 users 表格中的所有資料
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 查詢年齡大於 20 歲的使用者姓名和信箱
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="3-更新資料update">3️⃣ 更新資料（Update）
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- 將名稱為 Michelle 的使用者年齡改為 27 歲
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">users</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SET</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">27</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Michelle&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="4-刪除資料delete">4️⃣ 刪除資料（Delete）
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- 刪除名稱為 Michelle 的使用者資料
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Michelle&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h3 id="實用建議--善用條件關鍵字-where-和-select">實用建議 : 善用條件關鍵字 <code>WHERE</code> 和 <code>SELECT</code>
+</h3><p>在寫到 <code>UPDATE</code> 或是 <code>DELETE</code> 關鍵字時，新手很容易忘記設定後面條件，結果導致整個資料表的內容被意外「全部覆蓋」或「完全刪除」，這種情況下，我們一定要<strong>記得使用<code>條件關鍵字</code>，最常見的就是<code>WHERE</code>。</strong></p>
+<p>除此之外</p>
+<p>在進行 <code>UPDATE</code> 或 <code>DELETE</code> 之前，可以先用 <code>SELECT</code> 指令把你要操作的資料選出來，確保範圍正確、條件沒有寫錯，之後再進行 <code>UPDATE</code> 或 <code>DELETE</code>，這樣可以大大降低誤刪或誤改資料的風險。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- 先用 SELECT 測試條件正確
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">18</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 再進行 UPDATE 或 DELETE
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;underage&#39;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">18</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">18</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<p>理解了如何操作「資料操作 (表格內的資料)」，我們當然也能透過其他關鍵字來操作「資料表結構 (表格的本身)」，下面是常用的關鍵字：</p>
+<h2 id="crud-資料表結構操作資料表索引檢視表結構">CRUD 資料表結構操作（資料表/索引/檢視表結構）
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>關鍵字</th>
+          <th>中文說明</th>
+          <th>功能用途</th>
+          <th>範例</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>CREATE TABLE</td>
+          <td>建立資料表</td>
+          <td>新建一個新的表格</td>
+          <td><code>CREATE TABLE users (...);</code></td>
+      </tr>
+      <tr>
+          <td>DROP TABLE</td>
+          <td>刪除資料表</td>
+          <td>永久刪除一個表格</td>
+          <td><code>DROP TABLE users;</code></td>
+      </tr>
+      <tr>
+          <td>ALTER TABLE</td>
+          <td>修改資料表結構</td>
+          <td>增加/修改/刪除欄位或限制</td>
+          <td><code>ALTER TABLE users ADD COLUMN age INT;</code></td>
+      </tr>
+      <tr>
+          <td>RENAME TABLE</td>
+          <td>重新命名資料表</td>
+          <td>把表格改名</td>
+          <td><code>RENAME TABLE users TO members;</code></td>
+      </tr>
+      <tr>
+          <td>TRUNCATE TABLE</td>
+          <td>清空資料表</td>
+          <td>快速刪除「所有資料」，但保留表格結構</td>
+          <td><code>TRUNCATE TABLE users;</code></td>
+      </tr>
+      <tr>
+          <td>CREATE INDEX</td>
+          <td>建立索引</td>
+          <td>在欄位上加索引加速查詢</td>
+          <td><code>CREATE INDEX idx_name ON users(name);</code></td>
+      </tr>
+      <tr>
+          <td>DROP INDEX</td>
+          <td>刪除索引</td>
+          <td>把某個欄位的索引移除</td>
+          <td><code>DROP INDEX idx_name ON users;</code></td>
+      </tr>
+      <tr>
+          <td>CREATE VIEW</td>
+          <td>建立檢視表（視圖）</td>
+          <td>建立一個虛擬表格</td>
+          <td><code>CREATE VIEW adult_users AS SELECT ...</code></td>
+      </tr>
+      <tr>
+          <td>DROP VIEW</td>
+          <td>刪除檢視表</td>
+          <td>刪除虛擬表格</td>
+          <td><code>DROP VIEW adult_users;</code></td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="資料表結構-範例">資料表結構 (範例)
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- 建立一個名為 users 的新資料表，含三個欄位
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">age</span><span class="w"> </span><span class="nb">INT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 永久刪除名為 users 的資料表（資料和結構都會消失）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 在 users 資料表中新增一個 age 欄位，型態為整數
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="nb">INT</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>⚠️ 提醒：結構操作（如 DROP、ALTER、TRUNCATE）通常是不可逆的，執行前務必確認或備份資料表，以免資料損失！</p>
+</blockquote>
+<hr>
+<h2 id="常見新手-qa">常見新手 Q&amp;A
+</h2><h3 id="q1-sql-跟-mysqlpostgresqlsqlite-有什麼不同">Q1. SQL 跟 MySQL、PostgreSQL、SQLite 有什麼不同？
+</h3><ul>
+<li><strong>SQL</strong> 是語言（用來操作資料庫的標準指令）；</li>
+<li><strong>MySQL/SQLite/PostgreSQL</strong> 是資料庫軟體（支援 SQL 指令的系統）。</li>
+</ul>
+<h3 id="q2-那些-sql-指令最常出錯">Q2. 那些 SQL 指令最常出錯？
+</h3><ul>
+<li>欄位名稱拼錯（如 name 寫成 names）</li>
+<li>單引號、逗號等符號忘記加</li>
+<li>沒有 WHERE 條件，導致「全表」都被更改/刪除</li>
+</ul>
+<h3 id="q3-where-條件沒寫會怎樣">Q3. WHERE 條件沒寫，會怎樣？
+</h3><ul>
+<li>沒有 <code>WHERE</code>，UPDATE/DELETE 會影響<strong>全部資料</strong>，超危險！<br>
+(永遠記得：操作前，<code>SELECT</code> 測試一下範圍，確保條件沒寫錯。)</li>
+</ul>
+<h3 id="q4-資料型態要怎麼選textintegerdatetime">Q4. 資料型態要怎麼選？（TEXT、INTEGER、DATETIME…）
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th><strong>型態</strong></th>
+          <th><strong>範例</strong></th>
+          <th><strong>適合存放</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>TEXT</strong></td>
+          <td>&lsquo;Amy&rsquo;, &lsquo;abc@gmail&rsquo;</td>
+          <td>姓名、信箱、地址</td>
+      </tr>
+      <tr>
+          <td><strong>INTEGER</strong></td>
+          <td>25, 99999</td>
+          <td>年齡、金額</td>
+      </tr>
+      <tr>
+          <td><strong>REAL</strong></td>
+          <td>3.14, 29.95</td>
+          <td>價格、分數</td>
+      </tr>
+      <tr>
+          <td><strong>DATETIME</strong></td>
+          <td>2024-01-01 10:00:00</td>
+          <td>時間</td>
+      </tr>
+  </tbody>
+</table></div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w">              </span><span class="c1">-- 名字，存文字
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="n">email</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w">             </span><span class="c1">-- 電子信箱，存文字
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="n">age</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span><span class="w">            </span><span class="c1">-- 年齡，存整數
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="n">balance</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span><span class="w">           </span><span class="c1">-- 餘額，存小數
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="n">created_at</span><span class="w"> </span><span class="n">DATETIME</span><span class="w">     </span><span class="c1">-- 註冊時間，存日期時間
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="腦力激盪">腦力激盪
+</h2><ol>
+<li>請寫出一個 SQL 指令，查詢所有 email 結尾為 <code>@gmail.com</code> 的使用者。</li>
+<li>假設你想把所有年齡小於 18 歲的會員刪除，該怎麼寫？</li>
+<li>請問如果漏掉 <code>WHERE</code> 條件，<code>UPDATE</code> 或 <code>DELETE</code> 會發生什麼事？</li>
+</ol>
+<hr>
+<p>(答案)</p>
+<ol>
+<li>請寫出一個 SQL 指令，查詢所有 email 結尾為 <code>@gmail.com</code> 的使用者。</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%@gmail.com&#39;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- LIKE &#39;%@gmail.com&#39; 表示只找 email 以 @gmail.com 結尾的資料。
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<ol start="2">
+<li>假設你想把所有年齡小於 18 歲的會員刪除，該怎麼寫？</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">18</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<ol start="3">
+<li>請問如果漏掉 <code>WHERE</code> 條件，<code>UPDATE</code> 或 <code>DELETE</code> 會發生什麼事？</li>
+</ol>
+<ul>
+<li>UPDATE 沒有 WHERE：所有資料都被更新。</li>
+<li>DELETE 沒有 WHERE：整個資料表資料都被刪除。</li>
+</ul>
+<hr>
+<h2 id="延伸">延伸
+</h2><p>這篇只講了最重要的 CRUD。<br>
+如果你已經搞懂，也歡迎繼續關注之後的文章：</p>
+<ul>
+<li><strong>JOIN 表連接</strong>：怎麼查詢多個表的資料？</li>
+<li><strong>聚合函數</strong>：SUM、COUNT、AVG 等實戰應用</li>
+<li><strong>索引/優化</strong>：如何讓查詢更快？</li>
+<li><strong>資料庫設計原則</strong>：避免資料重複與設計錯誤</li>
+</ul>
+<hr>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/sql/">SQL</a>
+        
+            <a href="/tags/%E8%B3%87%E6%96%99%E5%BA%AB/">資料庫</a>
+        
+            <a href="/tags/crud/">CRUD</a>
+        
+            <a href="/tags/%E8%B3%87%E6%96%99%E8%99%95%E7%90%86/">資料處理</a>
+        
+    </section>
+
+
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            Last updated on Jun 26, 2025 10:00 UTC
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/git-vs-github/">
+        
+        
+            <div class="article-image">
+                <img src="/p/git-vs-github/git-github.27b7fd2fd87093ffdcf9a3e697049777_hu11609125152282669174.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Git 和 GitHub 的區別？以及那些你不知道的冷知識！"
+                        data-key="git-vs-github" 
+                        data-hash="md5-J7f9L9hwk//c&#43;aPmlwSXdw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Git 和 GitHub 的區別？以及那些你不知道的冷知識！</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/python-polymorphism-guide/">
+        
+        
+            <div class="article-image">
+                <img src="/p/python-polymorphism-guide/python_polymorphism_guide.0244d23d89858032c59029018ae09279_hu4577286421694334425.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Python OOP入門指南 (四) ：多型"
+                        data-key="python-polymorphism-guide" 
+                        data-hash="md5-AkTSPYmFgDLFkCkBiuCSeQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Python OOP入門指南 (四) ：多型</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/python-abstract-class-guide/">
+        
+        
+            <div class="article-image">
+                <img src="/p/python-abstract-class-guide/python_abc_guide.ec890f42f5c2a2303b83d5588d598a95_hu3396738684149395731.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Python OOP入門指南 (二) ：抽象  掌握 ABC 與 @abstractmethod"
+                        data-key="python-abstract-class-guide" 
+                        data-hash="md5-7IkPQvXCojA7g9VYjVmKlQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Python OOP入門指南 (二) ：抽象  掌握 ABC 與 @abstractmethod</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/python-encapsulation-guide/">
+        
+        
+            <div class="article-image">
+                <img src="/p/python-encapsulation-guide/python_encapsulation.56b812e800a08a6905deb032faf06726_hu9693738819989330444.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Python OOP入門指南 (三) ：封裝"
+                        data-key="python-encapsulation-guide" 
+                        data-hash="md5-VrgS6ACgimkF3rAy&#43;vBnJg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Python OOP入門指南 (三) ：封裝</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/python-inheritance-guide2/">
+        
+        
+            <div class="article-image">
+                <img src="/p/python-inheritance-guide2/python_inheritance.7642ec5d10e2d743cc7bab1b2d97702e_hu11415079908607209177.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Python OOP入門指南 (一) ：繼承"
+                        data-key="python-inheritance-guide2" 
+                        data-hash="md5-dkLsXRDi10PMe6sbLZdwLg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Python OOP入門指南 (一) ：繼承</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "michelle-theme" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2025 Tomatos&#39;s Cat
+    </section>
+    
+    <section class="powerby">
+        
+            2025 Michelle's Blog. All rights reserved <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

@@ -41,12 +41,15 @@
     border-radius: 0.3rem;
     background-color: #282c34;
     transition: all 0.3s ease-in-out;
+    
 }
 .article-category a:hover{
     text-decoration: none;
     font-weight: bold;
     padding: 0.5rem 2.2rem;
     transition: all 0.3s ;
+    color: #f8f9c9;
+    background-color: #4f6368;
 
 }
 
@@ -152,4 +155,32 @@ pre.chroma {
   padding: 1em;
 }
 
+
+.table-wrapper table {
+  table-layout: auto; 
+  width: auto;
+  margin-left: 0;
+  margin-right: auto;
+  white-space: nowrap;
+}
+
+/* 只針對 .table-wrapper 的表格欄位（td）設定樣式 */
+.table-wrapper table td {
+  background-color: #424242;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 0.5rem;
+  white-space: nowrap;
+  text-align: left;   /* 明確指定欄位靠左 */
+}
+
+/* 只針對 .table-wrapper 的表格標題（th）設定樣式+置中 */
+.table-wrapper table th {
+  background-color: #424242;
+  color: #f8f9c9;
+  font-weight: bold;
+  padding: 0.5rem;
+  white-space: nowrap;
+  text-align: center;  /* 明確指定標題置中 */
+}
 
